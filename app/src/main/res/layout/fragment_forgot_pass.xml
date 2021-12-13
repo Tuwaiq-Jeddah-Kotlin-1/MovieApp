@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".user.Forgot_pass">
+    tools:context=".user.ForgotPass">
 
     <TextView
         android:id="@+id/textView"
@@ -67,7 +67,7 @@
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/tiet_email_sign_in"
+                    android:id="@+id/txtEmailForgot"
                     android:layout_width="301dp"
                     android:layout_height="match_parent"
                     android:background="@color/white"

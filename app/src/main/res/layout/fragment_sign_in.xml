@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -6,13 +7,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".user.Sign_in">
+    tools:context=".user.SignIn">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="20dp"
         android:text="MovieApp"
         android:textColor="@color/white"
         android:textSize="80sp"
@@ -24,7 +25,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/frame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center|top"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
             <TextView
@@ -104,14 +105,14 @@
                     android:minHeight="50dp"
                     android:text="remember_me"
                     android:textColor="@color/black"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textStyle="italic" />
 
                 <TextView
                     android:id="@+id/txt_forgot_pass"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="70dp"
                     android:layout_marginTop="15dp"
                     android:text="forgot password ?"
                     android:textColor="@color/black"
@@ -120,13 +121,13 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btn_signup"
+                android:id="@+id/btnSignup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:backgroundTint="@color/black"
-                android:text="sign_in"
+                android:text="sign in"
                 android:textSize="25sp"
                 android:textStyle="italic" />
 
@@ -135,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="100dp">
+                android:layout_marginBottom="50dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -149,7 +150,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="3dp"
-                    android:text="account"
+                    android:text="account ?"
                     android:textColor="@color/black" />
             </LinearLayout>
 
