@@ -6,18 +6,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/backGround"
     tools:context=".user.SignIn">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="MovieApp"
         android:textColor="@color/white"
         android:textSize="80sp"
-        android:textStyle="italic"
+        android:fontFamily="@font/aldrich"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,18 +44,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="sign in"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="50sp"
-                android:textStyle="italic" />
+                android:fontFamily="@font/aldrich"/>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:gravity="center"
-                android:textColorHint="@color/black"
+                android:textColorHint="@color/backGround"
                 app:startIconDrawable="@drawable/ic_email"
-                app:startIconTint="@color/black">
+                app:startIconTint="@color/backGround">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailED_in"
@@ -64,9 +64,9 @@
                     android:background="@color/white"
                     android:hint="email"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/black"
+                    android:textColor="@color/backGround"
                     android:textSize="25sp"
-                    android:textStyle="italic" />
+                    android:fontFamily="@font/aldrich" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -74,10 +74,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:gravity="center"
-                android:textColorHint="@color/black"
+                android:textColorHint="@color/backGround"
                 app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/backGround"
                 app:startIconDrawable="@drawable/ic_lock"
-                app:startIconTint="@color/black">
+                app:startIconTint="@color/backGround">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordEd_in"
@@ -86,9 +87,9 @@
                     android:background="@color/white"
                     android:hint="password"
                     android:inputType="textPassword"
-                    android:textColor="@color/black"
+                    android:textColor="@color/backGround"
                     android:textSize="25sp"
-                    android:textStyle="italic" />
+                    android:fontFamily="@font/aldrich" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -104,9 +105,9 @@
                     android:layout_marginStart="55dp"
                     android:minHeight="50dp"
                     android:text="remember_me"
-                    android:textColor="@color/black"
+                    android:textColor="@color/primary"
                     android:textSize="15sp"
-                    android:textStyle="italic" />
+                     />
 
                 <TextView
                     android:id="@+id/txt_forgot_pass"
@@ -115,21 +116,24 @@
                     android:layout_marginStart="70dp"
                     android:layout_marginTop="15dp"
                     android:text="forgot password ?"
-                    android:textColor="@color/black"
-                    android:textStyle="italic" />
+                    android:textColor="@color/primary"
+                     />
 
             </LinearLayout>
 
             <Button
                 android:id="@+id/btnSignup"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/black"
                 android:text="sign in"
-                android:textSize="25sp"
-                android:textStyle="italic" />
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/aldrich"
+                android:background="@drawable/btn_style"
+                />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -142,7 +146,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="you don’have an" />
+                    android:text="you don’have an"
+                    android:textColor="@color/backGround"/>
 
                 <TextView
                     android:id="@+id/txt_dont_have_account"
@@ -151,7 +156,7 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="3dp"
                     android:text="account ?"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/primary"/>
             </LinearLayout>
 
         </LinearLayout>

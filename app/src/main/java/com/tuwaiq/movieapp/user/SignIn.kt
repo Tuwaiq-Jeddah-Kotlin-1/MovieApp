@@ -48,7 +48,7 @@ class SignIn : Fragment() {
 
         checkBoxValue = sharedPreferences.getBoolean("CHECKBOX", false)
         if (checkBoxValue) {
-            findNavController().navigate(R.id.action_sign_in_to_homeFragment)
+           // findNavController().navigate(R.id.action_sign_in_to_homeFragment)
         }
 
         doNotHaveAc.setOnClickListener {

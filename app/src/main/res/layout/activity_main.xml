@@ -20,6 +20,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:labelVisibilityMode="selected"
+        android:background="@drawable/bottom_nav_bg"
+        style="@style/BottomNavigationTheme"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

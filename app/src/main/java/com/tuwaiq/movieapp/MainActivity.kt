@@ -23,9 +23,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.sign_in -> {
                     bottomNavView.visibility = View.GONE
                 }
-                /*R.id.Splash -> {
-                    bottomNavView.visibility = View.GONE
-                }*/
                 R.id.sign_up -> {
                     bottomNavView.visibility = View.GONE
                 }

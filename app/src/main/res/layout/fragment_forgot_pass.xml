@@ -3,91 +3,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/backGround"
     tools:context=".user.ForgotPass">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
         android:text="MovieApp"
+        android:fontFamily="@font/aldrich"
         android:textColor="@color/white"
         android:textSize="80sp"
-        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
+        android:id="@+id/frameLayout2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/frame"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center|top"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/aldrich"
                 android:text="forgot password ?"
-                android:textColor="@color/black"
-                android:textSize="45sp"
-                android:textStyle="italic" />
+                android:textColor="@color/white"
+                android:textSize="30dp"/>
 
             <TextView
                 android:layout_width="260dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/aldrich"
                 android:gravity="center"
                 android:text="write your email to reset password"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:textStyle="italic" />
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:gravity="center"
-                android:textColorHint="@color/black"
+                android:textColorHint="@color/backGround"
                 app:startIconDrawable="@drawable/ic_email"
-                app:startIconTint="@color/black">
+                app:startIconTint="@color/backGround">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtEmailForgot"
                     android:layout_width="301dp"
                     android:layout_height="match_parent"
                     android:background="@color/white"
+                    android:fontFamily="@font/aldrich"
                     android:hint="email"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/black"
+                    android:textColor="@color/mainText"
                     android:textSize="25sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/btnSendPass"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="40dp"
+                android:layout_marginRight="20dp"
                 android:layout_marginBottom="80dp"
+                android:background="@drawable/btn_style"
                 android:backgroundTint="@color/black"
-                android:text="SEND"
-                android:textSize="25sp"
-                android:textStyle="italic" />
+                android:fontFamily="@font/aldrich"
+                android:text="SEND" />
 
         </LinearLayout>
     </FrameLayout>
