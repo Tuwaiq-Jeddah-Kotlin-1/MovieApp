@@ -3,31 +3,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backGround"
+    android:background="@color/primary"
     tools:context=".user.ForgotPass">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="MovieApp"
-        android:fontFamily="@font/aldrich"
-        android:textColor="@color/white"
-        android:textSize="80sp"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/gif_logo2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/splash" />
 
     <FrameLayout
         android:id="@+id/frameLayout2"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
         android:background="@drawable/frame"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/gif_logo2">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -42,9 +38,10 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/aldrich"
-                android:text="forgot password ?"
-                android:textColor="@color/white"
-                android:textSize="30dp"/>
+                android:textStyle="bold"
+                android:text="Forgot Password ?"
+                android:textColor="@color/primary"
+                android:textSize="35sp"/>
 
             <TextView
                 android:layout_width="260dp"
@@ -54,14 +51,16 @@
                 android:fontFamily="@font/aldrich"
                 android:gravity="center"
                 android:text="write your email to reset password"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textColor="@color/primary"
+                android:textSize="14sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:gravity="center"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/backGround"
                 android:textColorHint="@color/backGround"
                 app:startIconDrawable="@drawable/ic_email"
                 app:startIconTint="@color/backGround">
@@ -87,6 +86,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="80dp"
+                android:textColor="@color/black"
                 android:background="@drawable/btn_style"
                 android:backgroundTint="@color/black"
                 android:fontFamily="@font/aldrich"

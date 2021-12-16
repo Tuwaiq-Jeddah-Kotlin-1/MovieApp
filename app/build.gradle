@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
+    // DaggerHilt
+    id 'dagger.hilt.android.plugin'
     //gson
     id 'kotlin-parcelize'
     //save args
@@ -20,6 +22,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        buildConfigField("String", "MOVIEDB_API_KEY", moviedb_api_key)
+    }
+    buildFeatures{
+        viewBinding true
     }
 
     buildTypes {
@@ -52,7 +58,11 @@ dependencies {
 
     // share_preference
     implementation 'androidx.preference:preference-ktx:1.1.1'
-
+    // Dagger Hilt
+    implementation("com.google.dagger:hilt-android:2.38.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.38.1")
+    //Paging3
+    implementation "androidx.paging:paging-runtime:3.1.0"
     //Navigation
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'
@@ -62,12 +72,21 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     // Retrofit with Moshi Converter
     implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
-    // Moshi
-    implementation 'com.squareup.moshi:moshi-kotlin:1.9.3'
+    implementation "com.squareup.retrofit2:converter-moshi:2.9.0"
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    //Room
+    implementation "androidx.room:room-runtime:2.2.6"
+    kapt "androidx.room:room-compiler:2.2.6"
     // Coil
     implementation "io.coil-kt:coil:1.1.1"
     //gson
     implementation 'com.google.code.gson:gson:2.8.7'
     //card view
     implementation "androidx.cardview:cardview:1.0.0"
+    // splash screen lottie
+    implementation "com.airbnb.android:lottie:4.2.2"
+    //gif
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'
 }

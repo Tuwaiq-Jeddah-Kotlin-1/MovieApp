@@ -4,35 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backGround"
+    android:background="@color/primary"
     tools:context=".user.SignUp">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:fontFamily="@font/aldrich"
-        android:text="MovieApp"
-        android:textColor="@color/white"
-        android:textSize="80sp"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/gif_logo2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/splash" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
         android:background="@drawable/frame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/gif_logo2">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center|top"
             android:layout_marginTop="10dp"
             android:orientation="vertical">
@@ -43,7 +40,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="@font/aldrich"
                 android:text="sign up"
-                android:textColor="@color/white"
+                android:textColor="@color/primary"
                 android:textSize="50sp" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -53,6 +50,8 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:textColorHint="@color/backGround"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/backGround"
                 app:startIconDrawable="@drawable/ic_person"
                 app:startIconTint="@color/backGround">
 
@@ -73,6 +72,8 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:textColorHint="@color/backGround"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/backGround"
                 app:startIconDrawable="@drawable/ic_email"
                 app:startIconTint="@color/backGround">
 
@@ -94,8 +95,8 @@
                 android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:textColorHint="@color/backGround"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/backGround"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/backGround"
                 app:startIconDrawable="@drawable/ic_lock"
                 app:startIconTint="@color/backGround">
 
@@ -117,6 +118,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/backGround"
                 android:textColorHint="@color/backGround"
                 app:startIconDrawable="@drawable/ic_phone"
                 app:startIconTint="@color/backGround">
@@ -144,20 +147,21 @@
                 android:layout_marginRight="20dp"
                 android:background="@drawable/btn_style"
                 android:fontFamily="@font/aldrich"
-                android:text="sign up" />
+                android:text="sign up"
+                android:textColor="@color/black" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp">
+                android:layout_marginTop="20dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="do you have an" />
+                    android:text="do you have an"
+                    android:textColor="@color/black"/>
 
                 <TextView
                     android:id="@+id/txt_have_account"

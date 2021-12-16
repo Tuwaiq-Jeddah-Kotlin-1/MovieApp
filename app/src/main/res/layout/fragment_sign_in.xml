@@ -1,36 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backGround"
+    android:background="@color/primary"
     tools:context=".user.SignIn">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="MovieApp"
-        android:textColor="@color/white"
-        android:textSize="80sp"
-        android:fontFamily="@font/aldrich"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/gif_logo"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/splash" />
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="10dp"
         android:background="@drawable/frame"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/gif_logo">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,16 +39,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:fontFamily="@font/aldrich"
                 android:text="sign in"
-                android:textColor="@color/white"
-                android:textSize="50sp"
-                android:fontFamily="@font/aldrich"/>
+                android:textColor="@color/primary"
+                android:textSize="50sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
                 android:gravity="center"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/backGround"
                 android:textColorHint="@color/backGround"
                 app:startIconDrawable="@drawable/ic_email"
                 app:startIconTint="@color/backGround">
@@ -62,11 +60,11 @@
                     android:layout_width="301dp"
                     android:layout_height="match_parent"
                     android:background="@color/white"
+                    android:fontFamily="@font/aldrich"
                     android:hint="email"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/backGround"
-                    android:textSize="25sp"
-                    android:fontFamily="@font/aldrich" />
+                    android:textSize="25sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -75,8 +73,8 @@
                 android:layout_marginTop="15dp"
                 android:gravity="center"
                 android:textColorHint="@color/backGround"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/backGround"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/backGround"
                 app:startIconDrawable="@drawable/ic_lock"
                 app:startIconTint="@color/backGround">
 
@@ -84,12 +82,12 @@
                     android:id="@+id/passwordEd_in"
                     android:layout_width="301dp"
                     android:layout_height="match_parent"
-                    android:background="@color/white"
+                    android:background="@color/white_dark"
+                    android:fontFamily="@font/aldrich"
                     android:hint="password"
                     android:inputType="textPassword"
                     android:textColor="@color/backGround"
-                    android:textSize="25sp"
-                    android:fontFamily="@font/aldrich" />
+                    android:textSize="25sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,8 +104,7 @@
                     android:minHeight="50dp"
                     android:text="remember_me"
                     android:textColor="@color/primary"
-                    android:textSize="15sp"
-                     />
+                    android:textSize="15sp" />
 
                 <TextView
                     android:id="@+id/txt_forgot_pass"
@@ -116,8 +113,7 @@
                     android:layout_marginStart="70dp"
                     android:layout_marginTop="15dp"
                     android:text="forgot password ?"
-                    android:textColor="@color/primary"
-                     />
+                    android:textColor="@color/primary" />
 
             </LinearLayout>
 
@@ -126,28 +122,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:backgroundTint="@color/black"
-                android:text="sign in"
-                android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:fontFamily="@font/aldrich"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/btn_style"
-                />
+                android:backgroundTint="@color/black"
+                android:textColor="@color/black"
+                android:fontFamily="@font/aldrich"
+                android:text="sign in" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="50dp">
+                android:layout_marginTop="20dp">
 
                 <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:text="you don’have an"
-                    android:textColor="@color/backGround"/>
+                    android:textColor="@color/black" />
 
                 <TextView
                     android:id="@+id/txt_dont_have_account"
@@ -156,7 +151,7 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="3dp"
                     android:text="account ?"
-                    android:textColor="@color/primary"/>
+                    android:textColor="@color/primary" />
             </LinearLayout>
 
         </LinearLayout>
