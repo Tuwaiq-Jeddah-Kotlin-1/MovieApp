@@ -15,13 +15,13 @@
         app:navGraph="@navigation/nav" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_nav_view"
+        android:id="@+id/nav_bottom"
+        style="@style/BottomNavigationTheme"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:labelVisibilityMode="selected"
         android:background="@drawable/bottom_nav_bg"
-        style="@style/BottomNavigationTheme"
+        app:labelVisibilityMode="selected"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

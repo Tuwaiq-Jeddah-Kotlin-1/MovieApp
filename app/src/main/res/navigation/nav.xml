@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/sign_in"
         android:name="com.tuwaiq.movieapp.user.SignIn"
-        android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" >
+        android:label="SignIn"
+        tools:layout="@layout/fragment_sign_in">
         <action
             android:id="@+id/action_sign_in_to_sign_up"
             app:destination="@id/sign_up" />
@@ -17,33 +17,70 @@
             android:id="@+id/action_sign_in_to_forgot_pass"
             app:destination="@id/forgot_pass" />
         <action
-            android:id="@+id/action_sign_in_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_sign_in_to_movieFragment"
+            app:destination="@id/nav_movie" />
     </fragment>
     <fragment
         android:id="@+id/sign_up"
         android:name="com.tuwaiq.movieapp.user.SignUp"
-        android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" >
+        android:label="SignUp"
+        tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/action_sign_up_to_sign_in"
             app:destination="@id/sign_in" />
         <action
-            android:id="@+id/action_sign_up_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_sign_up_to_movieFragment"
+            app:destination="@id/nav_movie" />
     </fragment>
     <fragment
         android:id="@+id/forgot_pass"
         android:name="com.tuwaiq.movieapp.user.ForgotPass"
-        android:label="fragment_forgot_pass"
-        tools:layout="@layout/fragment_forgot_pass" >
+        android:label="ForgotPassword"
+        tools:layout="@layout/fragment_forgot_pass">
         <action
             android:id="@+id/action_forgot_pass_to_sign_in"
             app:destination="@id/sign_in" />
     </fragment>
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.tuwaiq.movieapp.movie.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_favorite"
+        android:name="com.tuwaiq.movieapp.ui.favorite.FavoriteFragment"
+        android:label="Favorite"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_favoriteFragment_to_movieFragment"
+            app:destination="@id/nav_movie" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_movie"
+        android:name="com.tuwaiq.movieapp.ui.movie.MovieFragment"
+        android:label="Movie"
+        tools:layout="@layout/fragment_movie">
+        <action
+            android:id="@+id/action_movieFragment_to_favoriteFragment"
+            app:destination="@id/nav_favorite" />
+        <action
+            android:id="@+id/action_nav_movie_to_profileFragment"
+            app:destination="@id/nav_profile" />
+        <action
+            android:id="@+id/action_nav_movie_to_settingFragment"
+            app:destination="@id/nav_settings" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.tuwaiq.movieapp.user.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_nav_movie"
+            app:destination="@id/nav_movie" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.tuwaiq.movieapp.user.SettingFragment"
+        android:label="Setting"
+        tools:layout="@layout/fragment_setting" >
+        <action
+            android:id="@+id/action_settingFragment_to_nav_movie"
+            app:destination="@id/nav_movie" />
+    </fragment>
 </navigation>

@@ -14,15 +14,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.tuwaiq.movieapp.R
 
 
-class ForgotPass : Fragment() {
+class ForgotPass : Fragment(R.layout.fragment_forgot_pass) {
     private lateinit var sendPassButton: Button
-    private lateinit var enterToSendTheEmail : TextInputEditText
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_forgot_pass, container, false)
-        return view
-    }
+    private lateinit var enterToSendTheEmail: TextInputEditText
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 

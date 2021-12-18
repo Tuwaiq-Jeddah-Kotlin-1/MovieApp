@@ -21,7 +21,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class SignUp : Fragment() {
+class SignUp : Fragment(R.layout.fragment_sign_up) {
     private lateinit var haveAcc: TextView
     private lateinit var userName: TextInputEditText
     private lateinit var txtEmail1: TextInputEditText
@@ -29,12 +29,6 @@ class SignUp : Fragment() {
     private lateinit var phoneNum: TextInputEditText
     private lateinit var btnSignUp: Button
     private val db = Firebase.firestore.collection("UserAccount")
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_sign_up, container, false)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
@@ -100,7 +94,7 @@ class SignUp : Fragment() {
         try {
             db.document("$uid").set(account)
             withContext(Dispatchers.Main) {
-                val action: NavDirections = SignUpDirections.actionSignUpToHomeFragment()
+                val action: NavDirections = SignUpDirections.actionSignUpToMovieFragment()
                 view?.findNavController()?.navigate(action)
                 Toast.makeText(context, "saved data", Toast.LENGTH_LONG).show()
             }

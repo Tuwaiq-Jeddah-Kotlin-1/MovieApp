@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/movieView"
+        android:id="@+id/nav_movie"
         android:icon="@drawable/ic_movies"
         android:title="Movies" />
     <item
-        android:id="@+id/favorite_page"
+        android:id="@+id/nav_favorite"
         android:icon="@drawable/favorite_filled"
         android:title="Favorites"
         app:showAsAction="always" />
     <item
-        android:id="@+id/profile"
+        android:id="@+id/nav_profile"
         android:icon="@drawable/ic_person"
         android:title="Profile" />
     <item
-        android:id="@+id/settings"
+        android:id="@+id/nav_settings"
         android:icon="@drawable/ic_settings"
         android:title="Settings" />
 </menu>

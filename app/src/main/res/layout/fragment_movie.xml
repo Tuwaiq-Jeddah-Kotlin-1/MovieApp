@@ -2,7 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ui.movie.MovieFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_movie"
@@ -22,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="data failed to load"
+        android:text="failed to load data"
         android:layout_above="@id/btn_try_again"
         android:visibility="gone"
         tools:visibility="visible"/>
