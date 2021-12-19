@@ -6,5 +6,5 @@ import com.tuwaiq.movieapp.data.remot.MovieRepository
 
 class MovieViewModel @ViewModelInject constructor(private val repository: MovieRepository) :
     ViewModel() {
-
+    val movies = repository.getNowPlayingMovies()
 }
