@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary"
-    tools:context=".user.ForgotPass">
+    tools:context=".ui.user.ForgotPass">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/gif_logo2"

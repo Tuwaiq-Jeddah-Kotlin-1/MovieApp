@@ -11,7 +11,5 @@ interface MovieApi {
     }
 
     @GET("movie/now_playing?api_key=$API_KEY")
-    suspend fun getNowPlayingMovies(
-        @Query("page") position: Int,
-    ): MovieResponse
+    suspend fun getNowPlayingMovies(@Query("page") position: Int): MovieResponse
 }

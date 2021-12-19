@@ -11,7 +11,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tuwaiq.movieapp.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,10 +27,13 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         navController = navHostFragment.findNavController()
         val bottomNavView = findViewById<BottomNavigationView>(R.id.nav_bottom)
-        val appBarConfiguration = AppBarConfiguration.Builder(R.id.nav_movie,
+        val appBarConfiguration = AppBarConfiguration.Builder(
+            R.id.nav_movie,
             R.id.nav_favorite,
             R.id.nav_profile,
-            R.id.nav_settings).build()
+            R.id.nav_settings
+        ).build()
+
         setupActionBarWithNavController(navController, appBarConfiguration)
         binding.apply {
             navBottom.setupWithNavController(navController)
@@ -37,10 +42,18 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.sign_in -> { bottomNavView.visibility = View.GONE }
-                R.id.sign_up -> { bottomNavView.visibility = View.GONE }
-                R.id.forgot_pass -> { bottomNavView.visibility = View.GONE }
-                else -> { bottomNavView.visibility = View.VISIBLE }
+                R.id.sign_in -> {
+                    bottomNavView.visibility = View.GONE
+                }
+                R.id.sign_up -> {
+                    bottomNavView.visibility = View.GONE
+                }
+                R.id.forgot_pass -> {
+                    bottomNavView.visibility = View.GONE
+                }
+                else -> {
+                    bottomNavView.visibility = View.VISIBLE
+                }
             }
         }
     }

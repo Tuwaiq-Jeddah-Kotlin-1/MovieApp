@@ -1,4 +1,9 @@
 package com.tuwaiq.movieapp
 
-class MovieApplication  {
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+
+@HiltAndroidApp
+class MovieApplication : Application() {
 }

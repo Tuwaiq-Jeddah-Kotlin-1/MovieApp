@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/sign_in"
-        android:name="com.tuwaiq.movieapp.user.SignIn"
+        android:name="com.tuwaiq.movieapp.ui.user.SignIn"
         android:label="SignIn"
         tools:layout="@layout/fragment_sign_in">
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/sign_up"
-        android:name="com.tuwaiq.movieapp.user.SignUp"
+        android:name="com.tuwaiq.movieapp.ui.user.SignUp"
         android:label="SignUp"
         tools:layout="@layout/fragment_sign_up">
         <action
@@ -34,7 +34,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgot_pass"
-        android:name="com.tuwaiq.movieapp.user.ForgotPass"
+        android:name="com.tuwaiq.movieapp.ui.user.ForgotPass"
         android:label="ForgotPassword"
         tools:layout="@layout/fragment_forgot_pass">
         <action
@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.tuwaiq.movieapp.user.ProfileFragment"
+        android:name="com.tuwaiq.movieapp.ui.user.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -76,7 +76,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_settings"
-        android:name="com.tuwaiq.movieapp.user.SettingFragment"
+        android:name="com.tuwaiq.movieapp.ui.user.SettingFragment"
         android:label="Setting"
         tools:layout="@layout/fragment_setting" >
         <action

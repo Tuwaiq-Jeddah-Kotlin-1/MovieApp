@@ -1,12 +1,10 @@
-package com.tuwaiq.movieapp.user
+package com.tuwaiq.movieapp.ui.user
 
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
