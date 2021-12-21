@@ -21,16 +21,16 @@
         android:visibility="gone"
         tools:visability="visible" />
     <TextView
-        android:id="@+id/tv_failed"
+        android:id="@+id/tv_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:text="failed to load data"
-        android:layout_above="@id/btn_try_again"
+        android:layout_above="@id/btn_retry"
         android:visibility="gone"
         tools:visibility="visible"/>
     <Button
-        android:id="@+id/btn_try_again"
+        android:id="@+id/btn_retry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Retry"

@@ -22,10 +22,14 @@ class MovieFragment : Fragment(R.layout.fragment_movie) {
         val adapter = MovieAdapter()
         binding.apply {
             rvMovie.setHasFixedSize(true)
-            rvMovie.adapter = adapter
+            rvMovie.adapter = adapter.withLoadStateHeaderAndFooter(
+                header = MovieLoadStateAdapter { adapter.retry() },
+                footer = MovieLoadStateAdapter { adapter.retry() }
+
+            )
         }
         viewModel.movies.observe(viewLifecycleOwner) {
-            adapter.submitData(viewLifecycleOwner.lifecycle,it)
+            adapter.submitData(viewLifecycleOwner.lifecycle, it)
         }
     }
 
