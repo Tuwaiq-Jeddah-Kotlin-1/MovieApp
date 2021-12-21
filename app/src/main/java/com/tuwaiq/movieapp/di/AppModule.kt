@@ -1,14 +1,17 @@
 package com.tuwaiq.movieapp.di
 
+import android.app.Application
 import com.tuwaiq.movieapp.data.remot.MovieApi
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-@Singleton
+@InstallIn(SingletonComponent::class)
 object AppModule {
 
     @Provides

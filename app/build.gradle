@@ -92,3 +92,6 @@ dependencies {
     //gif
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'
 }
+kapt {
+    generateStubs = true
+}

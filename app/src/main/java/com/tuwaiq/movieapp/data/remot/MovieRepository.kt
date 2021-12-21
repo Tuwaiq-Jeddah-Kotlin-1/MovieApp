@@ -8,6 +8,7 @@ import javax.inject.Singleton
 
 @Singleton
 class MovieRepository @Inject constructor(private val movieApi: MovieApi) {
+
     fun getNowPlayingMovies() =
         Pager(
             config = PagingConfig(pageSize = 5, maxSize = 20, enablePlaceholders = false),
