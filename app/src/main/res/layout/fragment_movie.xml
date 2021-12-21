@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.movie.MovieFragment">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -20,29 +20,32 @@
         android:layout_centerInParent="true"
         android:visibility="gone"
         tools:visability="visible" />
+
     <TextView
-        android:id="@+id/tv_error"
+        android:id="@+id/tv_failed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@id/btn_try_again"
         android:layout_centerHorizontal="true"
         android:text="failed to load data"
-        android:layout_above="@id/btn_retry"
         android:visibility="gone"
-        tools:visibility="visible"/>
+        tools:visibility="visible" />
+
     <Button
-        android:id="@+id/btn_retry"
+        android:id="@+id/btn_try_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
         android:text="Retry"
-        android:layout_centerInParent="true"
         android:visibility="gone"
-        tools:visibility="visible"/>
+        tools:visibility="visible" />
+
     <TextView
+        android:id="@+id/tv_not_found"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:id="@+id/tv_not_found"
-        android:visibility="gone"
         android:text="Movie not found"
-        tools:visibility="visible"/>
+        android:visibility="gone"
+        tools:visibility="visible" />
 </RelativeLayout>
