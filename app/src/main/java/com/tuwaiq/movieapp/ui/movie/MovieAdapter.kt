@@ -17,11 +17,11 @@ class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.MovieViewHolder>(COMP
         RecyclerView.ViewHolder(binding.root) {
         fun bind(movie: Movie) {
             with(binding) {
-            Glide.with(itemView).load("${movie.baseUrl}${movie.poster_path}")
-                .centerCrop()
-                .transition(DrawableTransitionOptions.withCrossFade())
-                .error(R.drawable.ic_error)
-                .into(ivMoviePoster)
+                Glide.with(itemView).load("${movie.baseUrl}${movie.poster_path}")
+                    .centerCrop()
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .error(R.drawable.ic_error)
+                    .into(ivMoviePoster)
                 tvMovieTitle.text = movie.original_title
             }
         }

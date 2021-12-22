@@ -15,6 +15,7 @@
     </style>
 
     <style name="BottomNavigationTheme" parent="Theme.AppCompat.Light">
+
     </style>
 
 </resources>

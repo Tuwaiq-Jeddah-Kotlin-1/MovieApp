@@ -22,6 +22,8 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/bottom_nav_bg"
         app:labelVisibilityMode="selected"
+        app:itemIconTint="@color/color"
+        app:itemTextColor="@color/color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
