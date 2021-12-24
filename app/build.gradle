@@ -63,7 +63,11 @@ dependencies {
     kapt("com.google.dagger:hilt-android-compiler:2.38.1")
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha01"
     //Paging3
-    implementation "androidx.paging:paging-runtime:3.1.0"
+    implementation "androidx.paging:paging-runtime:3.0.0-alpha03"
+    // optional - RxJava2 support
+    implementation "androidx.paging:paging-rxjava2:3.0.0-alpha03"
+    // optional - Guava ListenableFuture support
+    implementation "androidx.paging:paging-guava:3.0.0-alpha03"
     //Navigation
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.5'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.5'

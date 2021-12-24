@@ -39,7 +39,7 @@
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/aldrich"
                 android:textStyle="bold"
-                android:text="Forgot Password ?"
+                android:text="@string/forgot_password"
                 android:textColor="@color/primary"
                 android:textSize="35sp"/>
 
@@ -50,7 +50,7 @@
                 android:layout_marginTop="8dp"
                 android:fontFamily="@font/aldrich"
                 android:gravity="center"
-                android:text="write your email to reset password"
+                android:text="@string/write_your_email_to_reset_password"
                 android:textColor="@color/primary"
                 android:textSize="14sp" />
 
@@ -71,7 +71,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/white"
                     android:fontFamily="@font/aldrich"
-                    android:hint="email"
+                    android:hint="@string/email"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/mainText"
                     android:textSize="25sp" />
@@ -90,7 +90,7 @@
                 android:background="@drawable/btn_style"
                 android:backgroundTint="@color/black"
                 android:fontFamily="@font/aldrich"
-                android:text="SEND" />
+                android:text="@string/send" />
 
         </LinearLayout>
     </FrameLayout>

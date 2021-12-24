@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/btn_try_again"
         android:layout_centerHorizontal="true"
-        android:text="failed to load data"
+        android:text="@string/failed_to_load_data"
         android:visibility="gone"
         tools:visibility="visible" />
 
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Retry"
+        android:text="@string/retry"
         android:visibility="gone"
         tools:visibility="visible" />
 
@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Movie not found"
+        android:text="@string/movie_not_found"
         android:visibility="gone"
         tools:visibility="visible" />
 </RelativeLayout>

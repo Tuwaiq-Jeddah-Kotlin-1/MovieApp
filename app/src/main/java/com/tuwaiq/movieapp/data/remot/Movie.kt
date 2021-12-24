@@ -10,6 +10,6 @@ data class Movie(
     val overview: String?,
     val poster_path: String,
     val original_title: String,
-):Parcelable {
+) : Parcelable {
     val baseUrl get() = "https://image.tmdb.org/t/p/w500"
 }

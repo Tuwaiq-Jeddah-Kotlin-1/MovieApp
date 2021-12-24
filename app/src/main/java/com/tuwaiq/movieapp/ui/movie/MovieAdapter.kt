@@ -11,21 +11,8 @@ import com.tuwaiq.movieapp.R
 import com.tuwaiq.movieapp.data.remot.Movie
 import com.tuwaiq.movieapp.databinding.ItemMovieBinding
 
-class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.MovieViewHolder>(COMPARATOR) {
 
-    inner class MovieViewHolder(private val binding: ItemMovieBinding) :
-        RecyclerView.ViewHolder(binding.root) {
-        fun bind(movie: Movie) {
-            with(binding) {
-                Glide.with(itemView).load("${movie.baseUrl}${movie.poster_path}")
-                    .centerCrop()
-                    .transition(DrawableTransitionOptions.withCrossFade())
-                    .error(R.drawable.ic_error)
-                    .into(ivMoviePoster)
-                tvMovieTitle.text = movie.original_title
-            }
-        }
-    }
+class MovieAdapter(private val listener : OnItemClickListener) : PagingDataAdapter<Movie, MovieAdapter.MovieViewHolder>(COMPARATOR) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val binding = ItemMovieBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -39,9 +26,40 @@ class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.MovieViewHolder>(COMP
         }
     }
 
+    inner class MovieViewHolder(private val binding: ItemMovieBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            binding.root.setOnClickListener {
+                val position = bindingAdapterPosition
+                if (position != RecyclerView.NO_POSITION){
+                    val item = getItem(position)
+                    if (item!=null){
+                        listener.onItemClick(item)
+                    }
+                }
+            }
+        }
+
+        fun bind(movie: Movie) {
+            with(binding) {
+                Glide.with(itemView)
+                    .load("${movie.baseUrl}${movie.poster_path}")
+                    .centerCrop()
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .error(R.drawable.ic_error)
+                    .into(ivMoviePoster)
+                tvMovieTitle.text = movie.original_title
+            }
+        }
+    }
+
+    interface OnItemClickListener{
+        fun onItemClick(movie: Movie)
+    }
+
     companion object {
         private val COMPARATOR = object : DiffUtil.ItemCallback<Movie>() {
-
             override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean =
                 oldItem.id == newItem.id
 
@@ -49,4 +67,5 @@ class MovieAdapter : PagingDataAdapter<Movie, MovieAdapter.MovieViewHolder>(COMP
                 oldItem == newItem
         }
     }
+
 }

@@ -5,18 +5,18 @@
     <item
         android:id="@+id/nav_movie"
         android:icon="@drawable/ic_movies"
-        android:title="Movies" />
+        android:title="@string/movies" />
     <item
         android:id="@+id/nav_favorite"
         android:icon="@drawable/favorite_filled"
-        android:title="Favorites"
+        android:title="@string/favorites"
         app:showAsAction="always" />
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/ic_person"
-        android:title="Profile" />
+        android:title="@string/profile" />
     <item
         android:id="@+id/nav_settings"
         android:icon="@drawable/ic_settings"
-        android:title="Settings" />
+        android:title="@string/settings" />
 </menu>

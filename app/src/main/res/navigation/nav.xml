@@ -18,7 +18,9 @@
             app:destination="@id/forgot_pass" />
         <action
             android:id="@+id/action_sign_in_to_movieFragment"
-            app:destination="@id/nav_movie" />
+            app:destination="@id/nav_movie"
+            app:popUpTo="@id/sign_in"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/sign_up"
@@ -64,6 +66,11 @@
         <action
             android:id="@+id/action_nav_movie_to_settingFragment"
             app:destination="@id/nav_settings" />
+        <action
+            android:id="@+id/action_nav_movie_to_nav_details"
+            app:destination="@id/nav_details"
+            app:popUpTo="@id/nav_details"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/nav_profile"
@@ -81,6 +88,18 @@
         tools:layout="@layout/fragment_setting" >
         <action
             android:id="@+id/action_settingFragment_to_nav_movie"
+            app:destination="@id/nav_movie" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_details"
+        android:name="com.tuwaiq.movieapp.ui.details.DetailsFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="movie"
+            app:argType="com.tuwaiq.movieapp.data.remot.Movie" />
+        <action
+            android:id="@+id/action_nav_details_to_nav_movie"
             app:destination="@id/nav_movie" />
     </fragment>
 </navigation>

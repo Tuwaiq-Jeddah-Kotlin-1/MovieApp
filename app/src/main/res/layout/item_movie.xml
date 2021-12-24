@@ -1,38 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="603.5dp"
-    android:background="@drawable/bottom_nav_bg">
+    android:layout_height="250dp"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
         android:id="@+id/iv_movie_poster"
         android:layout_width="match_parent"
-        android:layout_height="563.5dp"
-        android:scaleType="fitXY"
-        android:layout_centerHorizontal="true" />
+        android:layout_height="match_parent" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:layout_below="@+id/iv_movie_poster"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
-        android:background="@color/primary" />
+        android:layout_alignBottom="@id/iv_movie_poster"
+        android:background="@drawable/bottom_nav_bg"/>
 
     <TextView
         android:id="@+id/tv_movie_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_alignBottom="@id/iv_movie_poster"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:ellipsize="end"
         android:maxLines="1"
-        android:gravity="center"
-        android:textSize="18sp"
-        android:fontFamily="@font/aldrich"
-        android:text="Avengers"
-        android:textColor="@color/black" />
+        android:textColor="@color/primary"
+        tools:text="Avengers Infinity War" />
 </RelativeLayout>
