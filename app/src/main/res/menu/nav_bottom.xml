@@ -8,7 +8,7 @@
         android:title="@string/movies" />
     <item
         android:id="@+id/nav_favorite"
-        android:icon="@drawable/favorite_filled"
+        android:icon="@drawable/ic_favorite_white"
         android:title="@string/favorites"
         app:showAsAction="always" />
     <item

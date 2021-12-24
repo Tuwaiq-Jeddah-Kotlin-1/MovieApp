@@ -27,6 +27,8 @@ class MoviePagingSource(private val movieApi: MovieApi, private val query: Strin
         }
     }
 
-
+    override fun getRefreshKey(state: PagingState<Int, Movie>): Int? {
+        TODO("Not yet implemented")
+    }
 
 }

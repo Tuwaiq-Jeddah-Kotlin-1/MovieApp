@@ -49,17 +49,14 @@
         android:label="Favorite"
         tools:layout="@layout/fragment_favorite">
         <action
-            android:id="@+id/action_favoriteFragment_to_movieFragment"
-            app:destination="@id/nav_movie" />
+            android:id="@+id/action_nav_favorite_to_nav_details"
+            app:destination="@id/nav_details" />
     </fragment>
     <fragment
         android:id="@+id/nav_movie"
         android:name="com.tuwaiq.movieapp.ui.movie.MovieFragment"
         android:label="Movie"
         tools:layout="@layout/fragment_movie">
-        <action
-            android:id="@+id/action_movieFragment_to_favoriteFragment"
-            app:destination="@id/nav_favorite" />
         <action
             android:id="@+id/action_nav_movie_to_profileFragment"
             app:destination="@id/nav_profile" />

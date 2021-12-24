@@ -18,12 +18,25 @@
                 android:id="@+id/iv_movie_poster"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
                 android:layout_alignParentStart="true"
-                android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:adjustViewBounds="true"
                 tools:layout_height="300dp"
                 tools:src="@android:color/darker_gray" />
+
+            <ToggleButton
+                android:id="@+id/toggle_favorite"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="15dp"
+                android:background="@drawable/favorite"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:textOff=""
+                android:textOn="" />
 
             <TextView
                 android:id="@+id/tv_movie_title"
