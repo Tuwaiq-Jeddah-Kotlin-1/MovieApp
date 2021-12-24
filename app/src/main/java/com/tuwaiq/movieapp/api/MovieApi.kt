@@ -1,4 +1,4 @@
-package com.tuwaiq.movieapp.data.remot
+package com.tuwaiq.movieapp.api
 
 import com.tuwaiq.movieapp.BuildConfig
 import retrofit2.http.GET

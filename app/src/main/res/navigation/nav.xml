@@ -43,32 +43,7 @@
             android:id="@+id/action_forgot_pass_to_sign_in"
             app:destination="@id/sign_in" />
     </fragment>
-    <fragment
-        android:id="@+id/nav_favorite"
-        android:name="com.tuwaiq.movieapp.ui.favorite.FavoriteFragment"
-        android:label="Favorite"
-        tools:layout="@layout/fragment_favorite">
-        <action
-            android:id="@+id/action_nav_favorite_to_nav_details"
-            app:destination="@id/nav_details" />
-    </fragment>
-    <fragment
-        android:id="@+id/nav_movie"
-        android:name="com.tuwaiq.movieapp.ui.movie.MovieFragment"
-        android:label="Movie"
-        tools:layout="@layout/fragment_movie">
-        <action
-            android:id="@+id/action_nav_movie_to_profileFragment"
-            app:destination="@id/nav_profile" />
-        <action
-            android:id="@+id/action_nav_movie_to_settingFragment"
-            app:destination="@id/nav_settings" />
-        <action
-            android:id="@+id/action_nav_movie_to_nav_details"
-            app:destination="@id/nav_details"
-            app:popUpTo="@id/nav_details"
-            app:popUpToInclusive="true" />
-    </fragment>
+
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.tuwaiq.movieapp.ui.user.ProfileFragment"
@@ -88,15 +63,46 @@
             app:destination="@id/nav_movie" />
     </fragment>
     <fragment
+        android:id="@+id/nav_movie"
+        android:name="com.tuwaiq.movieapp.ui.movie.MovieFragment"
+        android:label="Movie"
+        tools:layout="@layout/fragment_movie" >
+        <action
+            android:id="@+id/action_nav_movie_to_nav_details"
+            app:destination="@id/nav_details" />
+        <action
+            android:id="@+id/action_nav_movie_to_nav_profile"
+            app:destination="@id/nav_profile" />
+        <action
+            android:id="@+id/action_nav_movie_to_nav_settings"
+            app:destination="@id/nav_settings" />
+        <action
+            android:id="@+id/action_nav_movie_to_nav_favorite"
+            app:destination="@id/nav_favorite" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_favorite"
+        android:name="com.tuwaiq.movieapp.ui.favorite.FavoriteFragment"
+        android:label="Favorite"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/action_nav_favorite_to_nav_details"
+            app:destination="@id/nav_details" />
+        <action
+            android:id="@+id/action_nav_favorite_to_nav_movie"
+            app:destination="@id/nav_movie" />
+    </fragment>
+    <fragment
         android:id="@+id/nav_details"
         android:name="com.tuwaiq.movieapp.ui.details.DetailsFragment"
-        android:label="Details"
+        android:label="Detail"
         tools:layout="@layout/fragment_details" >
         <argument
             android:name="movie"
-            app:argType="com.tuwaiq.movieapp.data.remot.Movie" />
+            app:argType="com.tuwaiq.movieapp.data.model.Movie" />
         <action
             android:id="@+id/action_nav_details_to_nav_movie"
             app:destination="@id/nav_movie" />
     </fragment>
+
 </navigation>

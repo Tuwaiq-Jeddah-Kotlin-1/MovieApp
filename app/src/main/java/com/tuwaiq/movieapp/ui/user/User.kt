@@ -1,4 +1,4 @@
-package com.tuwaiq.movieapp.data
+package com.tuwaiq.movieapp.ui.user
 
 data class User(
     val userName:String,
