@@ -12,7 +12,9 @@ data class FavoriteMovie(
     var id_movie: String,
     val original_title: String,
     val overview : String?,
-    val poster_path: String
+    val poster_path: String,
+   // val vote_average: Number
+
 ) : Serializable, Parcelable{
     @PrimaryKey (autoGenerate = true)
     var id : Int = 0

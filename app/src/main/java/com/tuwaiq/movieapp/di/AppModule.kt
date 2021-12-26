@@ -20,13 +20,9 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideFavMovieDatabase(
-        @ApplicationContext app:Context
-    ) = Room.databaseBuilder(
-        app,
-        FavoriteMovieDatabase::class.java,
-        "movie_db"
-    ).build()
+    fun provideFavMovieDatabase(@ApplicationContext app: Context) =
+        Room.databaseBuilder(app, FavoriteMovieDatabase::class.java, "movie_db"
+        ).build()
 
     @Singleton
     @Provides
@@ -42,6 +38,5 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideMovieApi(retrofit: Retrofit): MovieApi =
-        retrofit.create(MovieApi::class.java)
+    fun provideMovieApi(retrofit: Retrofit): MovieApi = retrofit.create(MovieApi::class.java)
 }

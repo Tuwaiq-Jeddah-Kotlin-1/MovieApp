@@ -73,7 +73,7 @@
                     android:fontFamily="@font/aldrich"
                     android:hint="@string/email"
                     android:inputType="textEmailAddress"
-                    android:textColor="@color/mainText"
+                    android:textColor="@color/backGround"
                     android:textSize="25sp" />
             </com.google.android.material.textfield.TextInputLayout>
 

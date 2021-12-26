@@ -81,14 +81,15 @@ class MovieFragment : Fragment(R.layout.fragment_movie), MovieAdapter.OnItemClic
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if (query!=null){
-                    binding.rvMovie.scrollToPosition(0)
                     viewModel.searchMovies(query)
-                    searchView.clearFocus()
                 }
                 return true
             }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
+            override fun onQueryTextChange(query: String?): Boolean {
+                if (query!=null){
+                    viewModel.searchMovies(query)
+                }
                 return true
             }
 

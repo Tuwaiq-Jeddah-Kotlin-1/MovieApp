@@ -9,8 +9,6 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.TextView
 import android.widget.Toast
-import androidx.navigation.NavDirections
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
@@ -20,20 +18,20 @@ class SignIn : Fragment(R.layout.fragment_sign_in) {
     private lateinit var doNotHaveAc: TextView
     private lateinit var txtForgotPassword: TextView
     private lateinit var btnSignIn: Button
-    private lateinit var txtEmail2: TextInputEditText
-    private lateinit var txtPass2: TextInputEditText
+    private lateinit var emailEd: TextInputEditText
+    private lateinit var passwordEd: TextInputEditText
     private lateinit var sharedPreferences: SharedPreferences
-    private var checkBoxValue = false
     private lateinit var rememberMe: CheckBox
+    private lateinit var editor: SharedPreferences.Editor
+    private var checkBoxValue = false
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        sharedPreferences =
-            this.requireActivity().getSharedPreferences("preference", Context.MODE_PRIVATE)
+        sharedPreferences = this.requireActivity().getSharedPreferences("preference", Context.MODE_PRIVATE)
         doNotHaveAc = view.findViewById(R.id.txt_dont_have_account)
         txtForgotPassword = view.findViewById(R.id.txt_forgot_pass)
         btnSignIn = view.findViewById(R.id.btnSignup)
-        txtEmail2 = view.findViewById(R.id.emailED_in)
-        txtPass2 = view.findViewById(R.id.passwordEd_in)
+        emailEd = view.findViewById(R.id.emailED_in)
+        passwordEd = view.findViewById(R.id.passwordEd_in)
         rememberMe = view.findViewById(R.id.checkBox)
 
         checkBoxValue = sharedPreferences.getBoolean("CHECKBOX", false)
@@ -42,12 +40,12 @@ class SignIn : Fragment(R.layout.fragment_sign_in) {
         }
 
         doNotHaveAc.setOnClickListener {
-            val action: NavDirections = SignInDirections.actionSignInToSignUp()
-            view.findNavController().navigate(action)
+            findNavController().navigate(R.id.action_sign_in_to_sign_up)
+
         }
         txtForgotPassword.setOnClickListener {
-            val action: NavDirections = SignInDirections.actionSignInToForgotPass()
-            view.findNavController().navigate(action)
+            findNavController().navigate(R.id.action_sign_in_to_forgot_pass)
+
         }
         btnSignIn.setOnClickListener {
             signIn()
@@ -55,43 +53,32 @@ class SignIn : Fragment(R.layout.fragment_sign_in) {
     }
 
     private fun signIn() {
-        val email: String = txtEmail2.text.toString().trim { it <= ' ' }
-        val password = txtPass2.text.toString().trim { it <= ' ' }
+        val email: String = emailEd.text.toString().trim { it <= ' ' }
+        val password = passwordEd.text.toString().trim { it <= ' ' }
 
         if (email.isNotEmpty() && password.isNotEmpty()) {
             //save to the Authentication
             FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        Toast.makeText(context, "Sign in successful", Toast.LENGTH_LONG)
-                            .show()
+                        Toast.makeText(context, "Sign in successful", Toast.LENGTH_LONG).show()
+                        //save user Preference
+                        editor = sharedPreferences.edit()
+                        editor.putString("EMAIL",email)
+                        editor.putString("PASSWORD",password)
+                        editor.putBoolean("CHECKBOX",rememberMe.isChecked)
+                        editor.apply()
 
-                        val action: NavDirections = SignInDirections.actionSignInToMovieFragment()
-                        view?.findNavController()?.navigate(action)
-                        checkBox()
+                        findNavController().navigate(R.id.action_sign_in_to_movieFragment)
                     } else {
                         // if the registration is not successful then show error massage
-                        Toast.makeText(
-                            context, "Please make sure the values are correct, or fill the fields",
-                            Toast.LENGTH_LONG
-                        ).show()
+                        Toast.makeText(context,
+                            "Please make sure the values are correct, or fill the fields",
+                            Toast.LENGTH_LONG).show()
                     }
                 }
         } else {
-            Toast.makeText(context, "please enter all fields", Toast.LENGTH_LONG)
-                .show()
+            Toast.makeText(context, "please enter all fields", Toast.LENGTH_LONG).show()
         }
     }
-
-    fun checkBox() {
-        val email: String = txtEmail2.text.toString()
-        val pass: String = txtPass2.text.toString()
-        val checked: Boolean = rememberMe.isChecked
-        val editor: SharedPreferences.Editor = sharedPreferences.edit()
-        editor.putString("EMAIL", email)
-        editor.putString("PASSWORD", pass)
-        editor.putBoolean("CHECKBOX", checked)
-        editor.apply()
-    }
-
 }

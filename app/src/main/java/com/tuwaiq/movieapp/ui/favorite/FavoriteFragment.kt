@@ -23,7 +23,7 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
         val adapter = FavoriteAdapter()
 
         viewModel.movies.observe(viewLifecycleOwner) {
-            adapter.setMovieList(it)
+            adapter.setMovieList(it.distinct())
             binding.apply {
                 rvMovie.setHasFixedSize(true)
                 rvMovie.adapter = adapter

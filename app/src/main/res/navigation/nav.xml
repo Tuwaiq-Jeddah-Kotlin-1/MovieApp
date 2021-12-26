@@ -52,6 +52,9 @@
         <action
             android:id="@+id/action_profileFragment_to_nav_movie"
             app:destination="@id/nav_movie" />
+        <action
+            android:id="@+id/action_nav_profile_to_sign_in"
+            app:destination="@id/sign_in" />
     </fragment>
     <fragment
         android:id="@+id/nav_settings"

@@ -16,6 +16,7 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_error.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_lock.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_log_out.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_movies.xml" value="0.13177083333333334" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_person.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_phone.xml" value="0.2526041666666667" />
@@ -28,6 +29,8 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_forgot_pass.xml" value="0.264" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_home.xml" value="0.15579710144927536" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_movie.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_setting.xml" value="0.17798913043478262" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_sign_in.xml" value="0.264" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_sign_up.xml" value="0.264" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/item_movie.xml" value="0.2210144927536232" />
