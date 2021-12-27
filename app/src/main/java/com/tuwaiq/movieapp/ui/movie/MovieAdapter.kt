@@ -14,6 +14,7 @@ import com.tuwaiq.movieapp.databinding.ItemMovieBinding
 
 class MovieAdapter(private val listener : OnItemClickListener) : PagingDataAdapter<Movie, MovieAdapter.MovieViewHolder>(COMPARATOR) {
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val binding = ItemMovieBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MovieViewHolder(binding)
@@ -30,6 +31,7 @@ class MovieAdapter(private val listener : OnItemClickListener) : PagingDataAdapt
         RecyclerView.ViewHolder(binding.root) {
 
         init {
+
             binding.root.setOnClickListener {
                 val position = bindingAdapterPosition
                 if (position != RecyclerView.NO_POSITION){
@@ -41,7 +43,9 @@ class MovieAdapter(private val listener : OnItemClickListener) : PagingDataAdapt
             }
         }
 
+
         fun bind(movie: Movie) {
+
             with(binding) {
                 Glide.with(itemView)
                     .load("${movie.baseUrl}${movie.poster_path}")
@@ -51,6 +55,7 @@ class MovieAdapter(private val listener : OnItemClickListener) : PagingDataAdapt
                     .into(ivMoviePoster)
                 tvMovieTitle.text = movie.original_title
             }
+
         }
     }
 

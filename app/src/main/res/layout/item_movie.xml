@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="250dp"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="250dp">
 
     <ImageView
         android:id="@+id/iv_movie_poster"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+
     <View
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_alignBottom="@id/iv_movie_poster"
-        android:background="@drawable/bottom_nav_bg"/>
+        android:background="@drawable/bottom_nav_bg" />
 
     <TextView
         android:id="@+id/tv_movie_title"

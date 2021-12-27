@@ -1,5 +1,6 @@
 package com.tuwaiq.movieapp.ui.details
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.View
@@ -57,6 +58,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                         progressBar.isVisible = false
                         tvDescription.isVisible = true
                         tvMovieTitle.isVisible = true
+                        tvRating.isVisible = true
                         return false
                     }
 
@@ -64,8 +66,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                 .into(ivMoviePoster)
             tvDescription.text = movie.overview
             tvMovieTitle.text = movie.original_title
-           // tvMovieVote.text = movie.vote_average.toString()
-
+            tvRating.text = movie.vote_average.toString()
 
             val liveData: MutableLiveData<Boolean> = MutableLiveData()
             var _isChecked = false
@@ -73,12 +74,13 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             fun checkMovie(id: String) {
                 CoroutineScope(Dispatchers.IO).launch {
                     val result = viewModel.checkMovie(id)
-                    withContext (Dispatchers.Main) {
+                    withContext(Dispatchers.Main) {
                         val checked = result > 0
                         liveData.value = checked
                     }
                 }
             }
+
             toggleFavorite.setOnClickListener {
                 _isChecked = !_isChecked
                 if (_isChecked) {
@@ -87,6 +89,14 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                     viewModel.removeFromFavorite(movie.id)
                 }
                 toggleFavorite.isChecked = _isChecked
+            }
+
+            binding.ivShareMovie.setOnClickListener {
+                val shareMovie = Intent(Intent.ACTION_SEND)
+                shareMovie.type = "text/plain"
+                shareMovie.putExtra(Intent.EXTRA_TEXT,
+                    "I recommend you to watch ${movie.original_title} ${movie.vote_average}")
+                startActivity(shareMovie)
             }
 
 

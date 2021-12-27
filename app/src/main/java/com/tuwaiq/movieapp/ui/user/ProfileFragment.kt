@@ -60,10 +60,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         emailProfile.isEnabled = false
 
         //get the info from the sp
-        sharedPreferences = this.requireActivity().getSharedPreferences("Profile", Context.MODE_PRIVATE)
-        val sp1 = sharedPreferences.getString("spUserName"," ")
-        val sp2 = sharedPreferences.getString("spEmail"," ")
-        val sp3 = sharedPreferences.getString("spPhoneNumber"," ")
+        sharedPreferences1 = this.requireActivity().getSharedPreferences("Profile", Context.MODE_PRIVATE)
+        val sp1 = sharedPreferences1.getString("spUserName"," ")
+        val sp2 = sharedPreferences1.getString("spEmail"," ")
+        val sp3 = sharedPreferences1.getString("spPhoneNumber"," ")
 
         userNameProfile.setText(sp1)
         emailProfile.setText(sp2)

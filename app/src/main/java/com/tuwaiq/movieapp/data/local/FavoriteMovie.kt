@@ -11,12 +11,12 @@ import java.io.Serializable
 data class FavoriteMovie(
     var id_movie: String,
     val original_title: String,
-    val overview : String?,
+    val overview: String?,
     val poster_path: String,
-   // val vote_average: Number
+    val vote_average: Double
 
-) : Serializable, Parcelable{
-    @PrimaryKey (autoGenerate = true)
-    var id : Int = 0
+    ) : Serializable, Parcelable {
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0
     val baseUrl get() = "https://image.tmdb.org/t/p/w500"
 }

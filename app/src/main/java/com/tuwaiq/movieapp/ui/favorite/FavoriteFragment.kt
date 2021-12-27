@@ -37,7 +37,8 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
                     favoriteMovie.id_movie,
                     favoriteMovie.overview,
                     favoriteMovie.poster_path,
-                    favoriteMovie.original_title
+                    favoriteMovie.original_title,
+                    favoriteMovie.vote_average
                 )
                 val action = FavoriteFragmentDirections.actionNavFavoriteToNavDetails(movie)
                 findNavController().navigate(action)
