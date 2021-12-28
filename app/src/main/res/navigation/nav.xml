@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/sign_in"
         android:name="com.tuwaiq.movieapp.ui.user.SignIn"
-        android:label="SignIn"
+        android:label="@string/Sign_in"
         tools:layout="@layout/fragment_sign_in">
         <action
             android:id="@+id/action_sign_in_to_sign_up"
@@ -25,7 +25,7 @@
     <fragment
         android:id="@+id/sign_up"
         android:name="com.tuwaiq.movieapp.ui.user.SignUp"
-        android:label="SignUp"
+        android:label="@string/sign_up"
         tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/action_sign_up_to_sign_in"
@@ -37,7 +37,7 @@
     <fragment
         android:id="@+id/forgot_pass"
         android:name="com.tuwaiq.movieapp.ui.user.ForgotPass"
-        android:label="ForgotPassword"
+        android:label="@string/forgot_password"
         tools:layout="@layout/fragment_forgot_pass">
         <action
             android:id="@+id/action_forgot_pass_to_sign_in"
@@ -47,7 +47,7 @@
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.tuwaiq.movieapp.ui.user.ProfileFragment"
-        android:label="Profile"
+        android:label="@string/my_profile"
         tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_profileFragment_to_nav_movie"
@@ -59,7 +59,7 @@
     <fragment
         android:id="@+id/nav_settings"
         android:name="com.tuwaiq.movieapp.ui.user.SettingFragment"
-        android:label="Setting"
+        android:label="@string/settings"
         tools:layout="@layout/fragment_setting" >
         <action
             android:id="@+id/action_settingFragment_to_nav_movie"
@@ -68,7 +68,7 @@
     <fragment
         android:id="@+id/nav_movie"
         android:name="com.tuwaiq.movieapp.ui.movie.MovieFragment"
-        android:label="Movie"
+        android:label="@string/movies"
         tools:layout="@layout/fragment_movie" >
         <action
             android:id="@+id/action_nav_movie_to_nav_details"
@@ -86,7 +86,7 @@
     <fragment
         android:id="@+id/nav_favorite"
         android:name="com.tuwaiq.movieapp.ui.favorite.FavoriteFragment"
-        android:label="Favorite"
+        android:label="@string/favorites"
         tools:layout="@layout/fragment_favorite">
         <action
             android:id="@+id/action_nav_favorite_to_nav_details"

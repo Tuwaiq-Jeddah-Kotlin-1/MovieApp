@@ -1,12 +1,10 @@
 package com.tuwaiq.movieapp.ui.movie
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import androidx.appcompat.widget.SearchView
-import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -15,7 +13,6 @@ import androidx.paging.LoadState
 import com.tuwaiq.movieapp.R
 import com.tuwaiq.movieapp.data.model.Movie
 import com.tuwaiq.movieapp.databinding.FragmentMovieBinding
-import com.tuwaiq.movieapp.databinding.ItemMovieBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -43,8 +40,6 @@ class MovieFragment : Fragment(R.layout.fragment_movie), MovieAdapter.OnItemClic
             }
 
         }
-
-
 
         viewModel.movies.observe(viewLifecycleOwner) {
             adapter.submitData(viewLifecycleOwner.lifecycle, it)

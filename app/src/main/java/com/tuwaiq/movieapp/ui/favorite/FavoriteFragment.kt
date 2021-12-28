@@ -6,11 +6,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.tuwaiq.movieapp.R
 import com.tuwaiq.movieapp.data.local.FavoriteMovie
 import com.tuwaiq.movieapp.data.model.Movie
 import com.tuwaiq.movieapp.databinding.FragmentFavoriteBinding
 import dagger.hilt.android.AndroidEntryPoint
+import io.grpc.InternalChannelz.id
 
 @AndroidEntryPoint
 class FavoriteFragment : Fragment(R.layout.fragment_favorite){

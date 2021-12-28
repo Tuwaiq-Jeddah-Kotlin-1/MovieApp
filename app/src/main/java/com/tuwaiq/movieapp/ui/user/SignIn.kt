@@ -21,12 +21,13 @@ class SignIn : Fragment(R.layout.fragment_sign_in) {
     private lateinit var emailEd: TextInputEditText
     private lateinit var passwordEd: TextInputEditText
     private lateinit var sharedPreferences: SharedPreferences
-    private lateinit var rememberMe: CheckBox
     private lateinit var editor: SharedPreferences.Editor
+    private lateinit var rememberMe: CheckBox
     private var checkBoxValue = false
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        sharedPreferences = this.requireActivity().getSharedPreferences("preference", Context.MODE_PRIVATE)
+        sharedPreferences =
+            this.requireActivity().getSharedPreferences("preference", Context.MODE_PRIVATE)
         doNotHaveAc = view.findViewById(R.id.txt_dont_have_account)
         txtForgotPassword = view.findViewById(R.id.txt_forgot_pass)
         btnSignIn = view.findViewById(R.id.btnSignup)
@@ -64,9 +65,9 @@ class SignIn : Fragment(R.layout.fragment_sign_in) {
                         Toast.makeText(context, "Sign in successful", Toast.LENGTH_LONG).show()
                         //save user Preference
                         editor = sharedPreferences.edit()
-                        editor.putString("EMAIL",email)
-                        editor.putString("PASSWORD",password)
-                        editor.putBoolean("CHECKBOX",rememberMe.isChecked)
+                        editor.putString("EMAIL", email)
+                        editor.putString("PASSWORD", password)
+                        editor.putBoolean("CHECKBOX", rememberMe.isChecked)
                         editor.apply()
 
                         findNavController().navigate(R.id.action_sign_in_to_movieFragment)

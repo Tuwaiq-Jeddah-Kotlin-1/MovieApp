@@ -40,9 +40,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/aldrich"
-                android:text="sign in"
+                android:text="@string/sign_in"
                 android:textColor="@color/primary"
-                android:textSize="50sp" />
+                android:textSize="40sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -61,7 +61,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/white"
                     android:fontFamily="@font/aldrich"
-                    android:hint="@string/email"
+                    android:hint="@string/Email"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/backGround"
                     android:textSize="25sp" />
@@ -84,7 +84,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/white_dark"
                     android:fontFamily="@font/aldrich"
-                    android:hint="password"
+                    android:hint="@string/password"
                     android:inputType="textPassword"
                     android:textColor="@color/backGround"
                     android:textSize="25sp" />
@@ -102,7 +102,7 @@
                     android:layout_gravity="start"
                     android:layout_marginStart="55dp"
                     android:minHeight="50dp"
-                    android:text="remember_me"
+                    android:text="@string/remember_me"
                     android:textColor="@color/primary"
                     android:textSize="15sp" />
 
@@ -110,16 +110,16 @@
                     android:id="@+id/txt_forgot_pass"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="70dp"
+                    android:layout_marginStart="60dp"
                     android:layout_marginTop="15dp"
-                    android:text="forgot password ?"
+                    android:text="@string/forgot_password"
                     android:textColor="@color/primary" />
 
             </LinearLayout>
 
             <Button
                 android:id="@+id/btnSignup"
-                android:layout_width="match_parent"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="20dp"
@@ -128,7 +128,7 @@
                 android:background="@drawable/btn_style"
                 android:textColor="@color/black"
                 android:fontFamily="@font/aldrich"
-                android:text="sign in" />
+                android:text="@string/Sign_in" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -140,7 +140,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:text="you don’have an"
+                    android:text="@string/don_t_have_an"
                     android:textColor="@color/black" />
 
                 <TextView
@@ -149,7 +149,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginStart="3dp"
-                    android:text="account ?"
+                    android:text="@string/account"
                     android:textColor="@color/primary" />
             </LinearLayout>
 

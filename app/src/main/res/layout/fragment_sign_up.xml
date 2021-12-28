@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/aldrich"
-                android:text="sign up"
+                android:text="@string/sign_up"
                 android:textColor="@color/primary"
                 android:textSize="50sp" />
 
@@ -57,11 +57,11 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/userNameEd"
-                    android:layout_width="301dp"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:fontFamily="@font/aldrich"
-                    android:hint="user name"
+                    android:hint="@string/user_name"
                     android:inputType="textPersonName"
                     android:textSize="20sp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -79,11 +79,11 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailEd"
-                    android:layout_width="301dp"
+                    android:layout_width="300dp"
                     android:layout_height="match_parent"
                     android:background="@color/white"
                     android:fontFamily="@font/aldrich"
-                    android:hint="email"
+                    android:hint="@string/Email"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/backGround"
                     android:textSize="20sp" />
@@ -102,11 +102,11 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/passwordEd"
-                    android:layout_width="301dp"
+                    android:layout_width="300dp"
                     android:layout_height="match_parent"
                     android:background="@color/white"
                     android:fontFamily="@font/aldrich"
-                    android:hint="password"
+                    android:hint="@string/password"
                     android:inputType="textPassword"
                     android:textColor="@color/backGround"
                     android:textSize="20sp" />
@@ -126,11 +126,11 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/PhoneEd"
-                    android:layout_width="301dp"
+                    android:layout_width="300dp"
                     android:layout_height="match_parent"
                     android:background="@color/white"
                     android:fontFamily="@font/aldrich"
-                    android:hint="phone_number"
+                    android:hint="@string/phone_number"
                     android:inputType="phone"
                     android:textColor="@color/backGround"
                     android:textSize="20sp" />
@@ -139,7 +139,7 @@
 
             <Button
                 android:id="@+id/btnSignup"
-                android:layout_width="match_parent"
+                android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="20dp"
@@ -147,7 +147,7 @@
                 android:layout_marginRight="20dp"
                 android:background="@drawable/btn_style"
                 android:fontFamily="@font/aldrich"
-                android:text="sign up"
+                android:text="@string/sign_up"
                 android:textColor="@color/black" />
 
             <LinearLayout
@@ -160,7 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="do you have an"
+                    android:text="@string/don_t_have_an"
                     android:textColor="@color/black"/>
 
                 <TextView
@@ -170,7 +170,7 @@
                     android:layout_gravity="center"
                     android:layout_marginStart="3dp"
                     android:fontFamily="@font/aldrich"
-                    android:text="account ?"
+                    android:text="@string/account"
                     android:textColor="@color/primary" />
             </LinearLayout>
 

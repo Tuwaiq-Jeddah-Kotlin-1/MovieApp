@@ -10,9 +10,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class DetailsMovieModel @ViewModelInject constructor(
-    private val repository : FavoriteMovieRepository
-) : ViewModel(){
-    fun addToFavorite(movie: Movie){
+    private val repository: FavoriteMovieRepository,
+) : ViewModel() {
+    fun addToFavorite(movie: Movie) {
         CoroutineScope(Dispatchers.IO).launch {
             repository.addToFavorite(
                 FavoriteMovie(
@@ -28,7 +28,7 @@ class DetailsMovieModel @ViewModelInject constructor(
 
     suspend fun checkMovie(id: String) = repository.checkMovie(id)
 
-    fun removeFromFavorite(id: String){
+    fun removeFromFavorite(id: String) {
         CoroutineScope(Dispatchers.IO).launch {
             repository.removeFromFavorite(id)
         }

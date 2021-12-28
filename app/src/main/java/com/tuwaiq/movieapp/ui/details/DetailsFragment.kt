@@ -98,8 +98,6 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                     "I recommend you to watch ${movie.original_title} ${movie.vote_average}")
                 startActivity(shareMovie)
             }
-
-
         }
     }
 }

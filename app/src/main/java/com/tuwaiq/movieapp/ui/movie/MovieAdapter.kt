@@ -49,7 +49,6 @@ class MovieAdapter(private val listener : OnItemClickListener) : PagingDataAdapt
             with(binding) {
                 Glide.with(itemView)
                     .load("${movie.baseUrl}${movie.poster_path}")
-                    .centerCrop()
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .error(R.drawable.ic_error)
                     .into(ivMoviePoster)

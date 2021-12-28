@@ -16,12 +16,12 @@
         android:id="@+id/tv_error"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Result Could not be loaded" />
+        android:text="@string/result_could_not_be_loaded" />
 
     <Button
         android:id="@+id/btn_retry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Retry" />
+        android:text="@string/retry" />
 
 </LinearLayout>

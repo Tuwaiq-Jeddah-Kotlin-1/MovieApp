@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">موڤي</string>
+    <string name="search">بحث</string>
+    <string name="movies">أفلام</string>
+    <string name="favorites">المفضلة</string>
+    <string name="profile">الصفحة الشخصية</string>
+    <string name="settings">الإعدادات</string>
+    <string name="write_your_email_to_reset_password">قم بكتابة الإيميل لإستعادة كلمة المرور</string>
+    <string name="send">إرسال</string>
+    <string name="failed_to_load_data">فشل في تحميل البيانات</string>
+    <string name="movie_not_found">الفيلم غير موجود</string>
+    <string name="dark_mode">الوضع الليلي</string>
+    <string name="Email">إيميل</string>
+    <string name="sign_out">تسجيل الخروج</string>
+    <string name="phone_number">رقم الجوال</string>
+    <string name="user_name">إسم المستخدم</string>
+    <string name="my_profile">صفحتي الشخصية</string>
+    <string name="save">حفظ</string>
+    <string name="sign_in">تسجيل دخول</string>
+    <string name="remember_me">تذكرني</string>
+    <string name="forgot_password">نسيت كلمةالمرور؟</string>
+    <string name="Sign_in">تسجيل دخول</string>
+    <string name="don_t_have_an">ليس لديك</string>
+    <string name="account">حساب؟</string>
+    <string name="sign_up">تسجيل جديد</string>
+    <string name="password">كلمة المرور</string>
+    <string name="language">تغيير اللغة</string>
+    <string name="about_us">من نحن</string>
+    <string name="version">الإصدار</string>
+    <string name="about">تطبيق موڤي هو الواجهة الأولى لعشاق الأفلام,
+    تستطيع الإطلاع على أحدث الأفلام اللتي تعرض حاليّا في قاعات السينما.</string>
+    <string name="_1_0_0">1.0.0</string>
+    <string name="result_could_not_be_loaded">النتيجة لايمكن عرضها</string>
+    <string name="retry">إعادة المحاولة</string>
+</resources>
