@@ -11,6 +11,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tuwaiq.movieapp.databinding.ActivityMainBinding
+import com.tuwaiq.movieapp.notification.MovieNotificationRepo
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -56,6 +57,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        MovieNotificationRepo().myNotification(this)
     }
 
     override fun onSupportNavigateUp(): Boolean {
