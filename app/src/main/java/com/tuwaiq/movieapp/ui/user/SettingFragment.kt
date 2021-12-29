@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.core.app.ActivityCompat.recreate
 import androidx.fragment.app.Fragment
 import com.tuwaiq.movieapp.R
+import com.tuwaiq.movieapp.utils.SettingUtil
 import java.util.*
 
 class SettingFragment : Fragment(R.layout.fragment_setting) {
@@ -18,21 +19,19 @@ class SettingFragment : Fragment(R.layout.fragment_setting) {
     private lateinit var languageTextView: TextView
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
+    private lateinit var setting: SettingUtil
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         languageTextView = view.findViewById(R.id.language)
         languageTextView.setOnClickListener {
             showChangeLanguage()
         }
+        setting = SettingUtil(requireContext())
     }
 
     //save and set language
     private fun saveLang(lang: String) {
-        val locale = Locale(lang)
-        Locale.setDefault(locale)
-        val config = Configuration()
-        config.locale = locale
-        context?.resources?.updateConfiguration(config, context?.resources?.displayMetrics)
+        setting.saveLang(lang)
         sharedPreferences =
             this.requireActivity().getSharedPreferences("Settings", Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()

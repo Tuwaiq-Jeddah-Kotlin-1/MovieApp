@@ -15,6 +15,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.tuwaiq.movieapp.databinding.ActivityMainBinding
 import com.tuwaiq.movieapp.notification.MovieNotificationRepo
+import com.tuwaiq.movieapp.utils.SettingUtil
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
@@ -23,9 +24,16 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
     private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var setting: SettingUtil
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //save and set language
+        setting = SettingUtil(this)
+        sharedPreferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE)
+        val language = sharedPreferences.getString("MY_LANG","")!!
+        setting.saveLang(language)
 
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
@@ -67,20 +75,8 @@ class MainActivity : AppCompatActivity() {
         // Notification
         MovieNotificationRepo().myNotification(this)
 
-        //save and set language
-         sharedPreferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE)
-        val language = sharedPreferences.getString("MY_LANG","")!!
-        saveLang(language)
-
     }
 
-    private fun saveLang(lang: String) {
-        val locale = Locale(lang)
-        Locale.setDefault(locale)
-        val config = Configuration()
-        config.locale = locale
-        this.resources?.updateConfiguration(config, this.resources?.displayMetrics)
-    }
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()

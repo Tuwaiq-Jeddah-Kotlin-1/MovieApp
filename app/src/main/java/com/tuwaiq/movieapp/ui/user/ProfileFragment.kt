@@ -77,7 +77,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         }
     }
 
-    fun getUserInfo(userID: String) = CoroutineScope(Dispatchers.IO).launch {
+    private fun getUserInfo(userID: String) = CoroutineScope(Dispatchers.IO).launch {
 
         try {
             val db = FirebaseFirestore.getInstance()

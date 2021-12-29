@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import androidx.room.Entity
@@ -16,7 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import io.grpc.InternalChannelz.id
 
 @AndroidEntryPoint
-class FavoriteFragment : Fragment(R.layout.fragment_favorite){
+class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
     private val viewModel by viewModels<FavoriteViewModel>()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -24,13 +25,13 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite){
 
         val adapter = FavoriteAdapter()
 
-        viewModel.movies.observe(viewLifecycleOwner) {
+        viewModel.movies.observe(viewLifecycleOwner, Observer {
             adapter.setMovieList(it.distinct())
             binding.apply {
                 rvMovie.setHasFixedSize(true)
                 rvMovie.adapter = adapter
             }
-        }
+        })
 
 
         adapter.setOnItemClickCallback(object : FavoriteAdapter.OnItemClickCallback {
