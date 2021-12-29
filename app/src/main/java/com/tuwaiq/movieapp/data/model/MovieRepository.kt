@@ -8,7 +8,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class MovieRepository @Inject constructor(private val movieApi: MovieApi){
+class MovieRepository @Inject constructor(private val movieApi: MovieApi) {
 
     fun getNowPlayingMovies() =
         Pager(
@@ -17,7 +17,7 @@ class MovieRepository @Inject constructor(private val movieApi: MovieApi){
                 maxSize = 20,
                 enablePlaceholders = false
             ),
-            pagingSourceFactory = {MoviePagingSource(movieApi,null)}
+            pagingSourceFactory = { MoviePagingSource(movieApi, null) }
         ).liveData
 
     fun getSearchMovies(query: String) =
@@ -27,7 +27,6 @@ class MovieRepository @Inject constructor(private val movieApi: MovieApi){
                 maxSize = 20,
                 enablePlaceholders = false
             ),
-            pagingSourceFactory = {MoviePagingSource(movieApi,query)}
+            pagingSourceFactory = { MoviePagingSource(movieApi, query) }
         ).liveData
-
 }

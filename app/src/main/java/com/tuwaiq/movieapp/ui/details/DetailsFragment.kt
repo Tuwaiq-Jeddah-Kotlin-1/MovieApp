@@ -7,7 +7,6 @@ import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
@@ -17,10 +16,7 @@ import com.bumptech.glide.request.target.Target
 import com.tuwaiq.movieapp.R
 import com.tuwaiq.movieapp.databinding.FragmentDetailsBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+
 
 @AndroidEntryPoint
 class DetailsFragment : Fragment(R.layout.fragment_details) {
@@ -64,22 +60,17 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
 
                 })
                 .into(ivMoviePoster)
+
+            var _isChecked = false
+            viewModel.checkMovie(movie.id)
+            viewModel.liveData.observe(viewLifecycleOwner) {
+                toggleFavorite.isChecked = it
+                _isChecked = it
+            }
+
             tvDescription.text = movie.overview
             tvMovieTitle.text = movie.original_title
             tvRating.text = movie.vote_average.toString()
-
-            val liveData: MutableLiveData<Boolean> = MutableLiveData()
-            var _isChecked = false
-
-            fun checkMovie(id: String) {
-                CoroutineScope(Dispatchers.IO).launch {
-                    val result = viewModel.checkMovie(id)
-                    withContext(Dispatchers.Main) {
-                        val checked = result > 0
-                        liveData.value = checked
-                    }
-                }
-            }
 
             toggleFavorite.setOnClickListener {
                 _isChecked = !_isChecked
@@ -90,7 +81,6 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                 }
                 toggleFavorite.isChecked = _isChecked
             }
-
             binding.ivShareMovie.setOnClickListener {
                 val shareMovie = Intent(Intent.ACTION_SEND)
                 shareMovie.type = "text/plain"
