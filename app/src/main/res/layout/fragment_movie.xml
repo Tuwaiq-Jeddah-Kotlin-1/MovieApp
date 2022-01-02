@@ -11,7 +11,8 @@
         android:id="@+id/rv_movie"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
         tools:listitem="@layout/item_movie" />
 
     <ProgressBar
@@ -27,9 +28,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@id/btn_try_again"
-        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@+id/btn_retry"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/aldrich"
         android:text="@string/failed_to_load_data"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         android:visibility="gone"
+        tools:ignore="UnknownIdInLayout"
         tools:visibility="visible" />
 
     <Button
@@ -37,8 +44,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:background="@drawable/btn_style"
+        android:fontFamily="@font/aldrich"
         android:text="@string/retry"
         android:visibility="gone"
+        app:backgroundTint="@color/primary"
         tools:visibility="visible" />
 
     <TextView
@@ -46,7 +56,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:fontFamily="@font/aldrich"
         android:text="@string/movie_not_found"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         android:visibility="gone"
         tools:visibility="visible" />
 </RelativeLayout>

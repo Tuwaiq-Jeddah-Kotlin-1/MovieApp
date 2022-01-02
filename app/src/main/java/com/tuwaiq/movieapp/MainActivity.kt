@@ -2,7 +2,6 @@ package com.tuwaiq.movieapp
 
 import android.app.Activity
 import android.content.SharedPreferences
-import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -17,7 +16,6 @@ import com.tuwaiq.movieapp.databinding.ActivityMainBinding
 import com.tuwaiq.movieapp.notification.MovieNotificationRepo
 import com.tuwaiq.movieapp.utils.SettingUtil
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -29,12 +27,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         //save and set language
         setting = SettingUtil(this)
         sharedPreferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE)
-        val language = sharedPreferences.getString("MY_LANG","")!!
+        val language = sharedPreferences.getString("MY_LANG", "")!!
         setting.saveLang(language)
-
 
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -43,14 +41,14 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
         navController = navHostFragment.findNavController()
         val bottomNavView = findViewById<BottomNavigationView>(R.id.nav_bottom)
-        val appBarConfiguration = AppBarConfiguration.Builder(
+        /*val appBarConfiguration = AppBarConfiguration.Builder(
             R.id.nav_movie,
             R.id.nav_favorite,
             R.id.nav_profile,
             R.id.nav_settings
-        ).build()
+        ).build()*/
 
-        setupActionBarWithNavController(navController, appBarConfiguration)
+        setupActionBarWithNavController(navController)
         binding.apply {
             navBottom.setupWithNavController(navController)
         }
@@ -76,7 +74,6 @@ class MainActivity : AppCompatActivity() {
         MovieNotificationRepo().myNotification(this)
 
     }
-
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()

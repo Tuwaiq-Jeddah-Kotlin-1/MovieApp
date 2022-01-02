@@ -34,21 +34,17 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
     private lateinit var sharedPreferences1: SharedPreferences
     private lateinit var editor: SharedPreferences.Editor
 
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_profile, container, false)
-        return view
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         val uId = FirebaseAuth.getInstance().currentUser?.uid
         getUserInfo(uId.toString())
+
         //shared preference
         sharedPreferences =
             this.requireActivity().getSharedPreferences("preference", Context.MODE_PRIVATE)
+
+        sharedPreferences1 =
+            this.requireActivity().getSharedPreferences("Profile", Context.MODE_PRIVATE)
 
 
         userNameProfile = view.findViewById(R.id.txt_userName_profile)
@@ -60,10 +56,11 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         emailProfile.isEnabled = false
 
         //get the info from the sp
-        sharedPreferences1 = this.requireActivity().getSharedPreferences("Profile", Context.MODE_PRIVATE)
-        val sp1 = sharedPreferences1.getString("spUserName"," ")
-        val sp2 = sharedPreferences1.getString("spEmail"," ")
-        val sp3 = sharedPreferences1.getString("spPhoneNumber"," ")
+        sharedPreferences1 =
+            this.requireActivity().getSharedPreferences("Profile", Context.MODE_PRIVATE)
+        val sp1 = sharedPreferences1.getString("spUserName", " ")
+        val sp2 = sharedPreferences1.getString("spEmail", " ")
+        val sp3 = sharedPreferences1.getString("spPhoneNumber", " ")
 
         userNameProfile.setText(sp1)
         emailProfile.setText(sp2)
@@ -91,13 +88,14 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                         val userPhone = it.result!!.getString("number")
                         val userName = it.result!!.getString("userName")//moreInfo
 
-                        Log.e("user Info","userName ${userEmail.toString()} \n ${userName.toString()}")
+                        Log.e("user Info",
+                            "userName ${userEmail.toString()} \n ${userName.toString()}")
 
-                        sharedPreferences1 = requireActivity().getSharedPreferences("Profile", Context.MODE_PRIVATE)
                         editor = sharedPreferences1.edit()
-                        editor.putString("spEmail",userEmail)
-                        editor.putString("spPhoneNumber",userPhone)
-                        editor.putString("spUserName",userName)
+                        editor.putString("spEmail", userEmail)
+                        editor.putString("spPhoneNumber", userPhone)
+                        editor.putString("spUserName", userName)
+                        editor.clear()
                         editor.apply()
 
                     } else {
@@ -123,7 +121,10 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         val uId = FirebaseAuth.getInstance().currentUser?.uid
         val upDateUserData = Firebase.firestore.collection("UserAccount")
         upDateUserData.document(uId.toString())
-            .update("number",phoneNumberProfile.text.toString(),"userName",userNameProfile.text.toString())
+            .update("number",
+                phoneNumberProfile.text.toString(),
+                "userName",
+                userNameProfile.text.toString())
         Toast.makeText(context, "edit is successful", Toast.LENGTH_LONG).show()
 
     }

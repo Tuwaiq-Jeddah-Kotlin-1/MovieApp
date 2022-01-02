@@ -8,10 +8,12 @@ import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.tuwaiq.movieapp.databinding.MovieLoadStateBinding
 
-class MovieLoadStateAdapter(private val retry: ()-> Unit) : LoadStateAdapter<MovieLoadStateAdapter.LoadStateViewHolder>(){
+class MovieLoadStateAdapter(private val retry: () -> Unit) :
+    LoadStateAdapter<MovieLoadStateAdapter.LoadStateViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, loadState: LoadState): LoadStateViewHolder {
-        val binding = MovieLoadStateBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            MovieLoadStateBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return LoadStateViewHolder(binding)
     }
 
@@ -19,7 +21,8 @@ class MovieLoadStateAdapter(private val retry: ()-> Unit) : LoadStateAdapter<Mov
         holder.bind(loadState)
     }
 
-    inner class LoadStateViewHolder(private val binding: MovieLoadStateBinding) : RecyclerView.ViewHolder(binding.root){
+    inner class LoadStateViewHolder(private val binding: MovieLoadStateBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
         init {
             binding.btnRetry.setOnClickListener {
@@ -27,8 +30,8 @@ class MovieLoadStateAdapter(private val retry: ()-> Unit) : LoadStateAdapter<Mov
             }
         }
 
-        fun bind(loadState: LoadState){
-            with(binding){
+        fun bind(loadState: LoadState) {
+            with(binding) {
                 progressBar.isVisible = loadState is LoadState.Loading
                 btnRetry.isVisible = loadState !is LoadState.Loading
                 tvError.isVisible = loadState !is LoadState.Loading

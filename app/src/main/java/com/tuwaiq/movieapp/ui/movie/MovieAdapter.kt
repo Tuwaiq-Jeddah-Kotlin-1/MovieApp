@@ -12,7 +12,8 @@ import com.tuwaiq.movieapp.data.model.Movie
 import com.tuwaiq.movieapp.databinding.ItemMovieBinding
 
 
-class MovieAdapter(private val listener : OnItemClickListener) : PagingDataAdapter<Movie, MovieAdapter.MovieViewHolder>(COMPARATOR) {
+class MovieAdapter(private val listener: OnItemClickListener) :
+    PagingDataAdapter<Movie, MovieAdapter.MovieViewHolder>(COMPARATOR) {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
@@ -34,9 +35,9 @@ class MovieAdapter(private val listener : OnItemClickListener) : PagingDataAdapt
 
             binding.root.setOnClickListener {
                 val position = bindingAdapterPosition
-                if (position != RecyclerView.NO_POSITION){
+                if (position != RecyclerView.NO_POSITION) {
                     val item = getItem(position)
-                    if (item!=null){
+                    if (item != null) {
                         listener.onItemClick(item)
                     }
                 }
@@ -58,7 +59,7 @@ class MovieAdapter(private val listener : OnItemClickListener) : PagingDataAdapt
         }
     }
 
-    interface OnItemClickListener{
+    interface OnItemClickListener {
         fun onItemClick(movie: Movie)
     }
 

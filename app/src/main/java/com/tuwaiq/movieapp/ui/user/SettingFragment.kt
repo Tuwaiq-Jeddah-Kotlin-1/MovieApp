@@ -56,7 +56,6 @@ class SettingFragment : Fragment(R.layout.fragment_setting) {
             recreate(context as Activity)
             dialog.dismiss()
         }
-        val mDialog = mBuilder.create()
-        mDialog.show()
+         mBuilder.create().show()
     }
 }

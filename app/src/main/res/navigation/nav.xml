@@ -54,7 +54,9 @@
             app:destination="@id/nav_movie" />
         <action
             android:id="@+id/action_nav_profile_to_sign_in"
-            app:destination="@id/sign_in" />
+            app:destination="@id/sign_in"
+            app:popUpTo="@id/nav"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/nav_settings"

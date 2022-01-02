@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -18,6 +17,7 @@
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/splash" />
+
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -47,11 +47,11 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:gravity="center"
+                android:textColorHint="@color/backGround"
                 app:endIconMode="clear_text"
                 app:endIconTint="@color/backGround"
-                android:textColorHint="@color/backGround"
                 app:startIconDrawable="@drawable/ic_email"
                 app:startIconTint="@color/backGround">
 
@@ -64,13 +64,13 @@
                     android:hint="@string/Email"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/backGround"
-                    android:textSize="25sp" />
+                    android:textSize="22sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:textColorHint="@color/backGround"
                 app:endIconMode="password_toggle"
@@ -87,7 +87,7 @@
                     android:hint="@string/password"
                     android:inputType="textPassword"
                     android:textColor="@color/backGround"
-                    android:textSize="25sp" />
+                    android:textSize="22sp" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -123,25 +123,26 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/btn_style"
-                android:textColor="@color/black"
                 android:fontFamily="@font/aldrich"
-                android:text="@string/Sign_in" />
+                android:text="@string/Sign_in"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/primary" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="10dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:text="@string/don_t_have_an"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/white" />
 
                 <TextView
                     android:id="@+id/txt_dont_have_account"

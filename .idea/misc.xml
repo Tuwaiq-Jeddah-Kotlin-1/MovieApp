@@ -14,6 +14,7 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.128125" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_email.xml" value="0.13177083333333334" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_error.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_favorite_red.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_lock.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_log_out.xml" value="0.2526041666666667" />
@@ -24,14 +25,14 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_share.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/drawable/ic_star.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/font/aldrich.xml" value="0.26666666666666666" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.15579710144927536" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_details.xml" value="0.2" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_favorite.xml" value="0.1897644927536232" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_favorite.xml" value="0.11200000000000002" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_favourite.xml" value="0.22509057971014493" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_forgot_pass.xml" value="0.264" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_home.xml" value="0.15579710144927536" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_movie.xml" value="0.2210144927536232" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_movie.xml" value="0.25" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_setting.xml" value="0.17798913043478262" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/fragment_sign_in.xml" value="0.264" />
@@ -42,6 +43,8 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/layout/profile.xml" value="0.2164855072463768" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/menu/menu_search.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/menu/nav_bottom.xml" value="0.11197916666666667" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/MovieApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2526041666666667" />
       </map>
     </option>
   </component>

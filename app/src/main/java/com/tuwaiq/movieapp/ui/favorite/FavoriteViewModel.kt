@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.tuwaiq.movieapp.data.local.FavoriteMovieRepository
 
 class FavoriteViewModel @ViewModelInject constructor(
-    private val repository: FavoriteMovieRepository
-) : ViewModel(){
+    private val repository: FavoriteMovieRepository,
+) : ViewModel() {
     val movies = repository.getFavoriteMovies()
 }

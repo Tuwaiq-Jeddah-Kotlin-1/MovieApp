@@ -17,6 +17,7 @@ data class FavoriteMovie(
     val vote_average: Double
 
     ) : Serializable, Parcelable {
+    @IgnoredOnParcel
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0
     val baseUrl get() = "https://image.tmdb.org/t/p/w500"

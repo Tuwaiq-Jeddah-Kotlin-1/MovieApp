@@ -12,15 +12,15 @@ import com.tuwaiq.movieapp.databinding.ItemMovieBinding
 
 class FavoriteAdapter : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>() {
 
-    private lateinit var list : List<FavoriteMovie>
+    private lateinit var list: List<FavoriteMovie>
 
     private var onItemClickCallback: OnItemClickCallback? = null
 
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
     }
 
-    fun setMovieList(list: List<FavoriteMovie>){
+    fun setMovieList(list: List<FavoriteMovie>) {
         this.list = list
         notifyDataSetChanged()
     }

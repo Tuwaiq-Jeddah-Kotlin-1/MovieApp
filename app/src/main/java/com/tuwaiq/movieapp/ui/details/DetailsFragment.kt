@@ -55,6 +55,8 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                         tvDescription.isVisible = true
                         tvMovieTitle.isVisible = true
                         tvRating.isVisible = true
+                        toggleFavorite.isVisible = true
+                        ivShareMovie.isVisible = true
                         return false
                     }
 
@@ -85,7 +87,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                 val shareMovie = Intent(Intent.ACTION_SEND)
                 shareMovie.type = "text/plain"
                 shareMovie.putExtra(Intent.EXTRA_TEXT,
-                    "I recommend you to watch ${movie.original_title} ${movie.vote_average}")
+                    "I recommend you to watch \n Movie: ${movie.original_title} \n Rating:  ${movie.vote_average}")
                 startActivity(shareMovie)
             }
         }
