@@ -13,8 +13,7 @@ import com.tuwaiq.movieapp.databinding.ItemMovieBinding
 
 
 class MovieAdapter(private val listener: OnItemClickListener) :
-    PagingDataAdapter<Movie, MovieAdapter.MovieViewHolder>(COMPARATOR) {
-
+    PagingDataAdapter<Movie, MovieAdapter.MovieViewHolder>(MovieComparator) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val binding = ItemMovieBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -32,7 +31,6 @@ class MovieAdapter(private val listener: OnItemClickListener) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {
-
             binding.root.setOnClickListener {
                 val position = bindingAdapterPosition
                 if (position != RecyclerView.NO_POSITION) {
@@ -44,13 +42,10 @@ class MovieAdapter(private val listener: OnItemClickListener) :
             }
         }
 
-
         fun bind(movie: Movie) {
-
             with(binding) {
                 Glide.with(itemView)
                     .load("${movie.baseUrl}${movie.poster_path}")
-                    .transition(DrawableTransitionOptions.withCrossFade())
                     .error(R.drawable.ic_error)
                     .into(ivMoviePoster)
                 tvMovieTitle.text = movie.original_title
@@ -63,14 +58,11 @@ class MovieAdapter(private val listener: OnItemClickListener) :
         fun onItemClick(movie: Movie)
     }
 
-    companion object {
-        private val COMPARATOR = object : DiffUtil.ItemCallback<Movie>() {
-            override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean =
-                oldItem.id == newItem.id
+    object MovieComparator : DiffUtil.ItemCallback<Movie>() {
+        override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean =
+            oldItem.id == newItem.id
 
-            override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean =
-                oldItem == newItem
-        }
+        override fun areContentsTheSame(oldItem: Movie, newItem: Movie): Boolean =
+            oldItem == newItem
     }
-
 }

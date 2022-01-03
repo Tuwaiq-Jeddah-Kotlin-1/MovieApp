@@ -11,22 +11,10 @@ import javax.inject.Singleton
 class MovieRepository @Inject constructor(private val movieApi: MovieApi) {
 
     fun getNowPlayingMovies() =
-        Pager(
-            config = PagingConfig(
-                pageSize = 5,
-                maxSize = 20,
-                enablePlaceholders = false
-            ),
-            pagingSourceFactory = { MoviePagingSource(movieApi, null) }
-        ).liveData
+        Pager(PagingConfig(5, 20, false),
+            pagingSourceFactory = { MoviePagingSource(movieApi, null) }).liveData
 
     fun getSearchMovies(query: String) =
-        Pager(
-            config = PagingConfig(
-                pageSize = 5,
-                maxSize = 20,
-                enablePlaceholders = false
-            ),
-            pagingSourceFactory = { MoviePagingSource(movieApi, query) }
-        ).liveData
+        Pager(PagingConfig(5,20,false),
+            pagingSourceFactory = { MoviePagingSource(movieApi, query) }).liveData
 }

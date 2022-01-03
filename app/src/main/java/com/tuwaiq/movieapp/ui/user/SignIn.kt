@@ -37,7 +37,7 @@ class SignIn : Fragment(R.layout.fragment_sign_in) {
 
         checkBoxValue = sharedPreferences.getBoolean("CHECKBOX", false)
         if (checkBoxValue) {
-            //findNavController().navigate(R.id.action_sign_in_to_movieFragment)
+            findNavController().navigate(R.id.action_sign_in_to_movieFragment)
         }
 
         doNotHaveAc.setOnClickListener {

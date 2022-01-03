@@ -62,6 +62,10 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
 
                 })
                 .into(ivMoviePoster)
+            tvDescription.text = movie.overview
+            tvMovieTitle.text = movie.original_title
+            tvRating.text = movie.vote_average.toString()
+
 
             var _isChecked = false
             viewModel.checkMovie(movie.id)
@@ -69,10 +73,6 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                 toggleFavorite.isChecked = it
                 _isChecked = it
             }
-
-            tvDescription.text = movie.overview
-            tvMovieTitle.text = movie.original_title
-            tvRating.text = movie.vote_average.toString()
 
             toggleFavorite.setOnClickListener {
                 _isChecked = !_isChecked
@@ -83,6 +83,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                 }
                 toggleFavorite.isChecked = _isChecked
             }
+
             binding.ivShareMovie.setOnClickListener {
                 val shareMovie = Intent(Intent.ACTION_SEND)
                 shareMovie.type = "text/plain"

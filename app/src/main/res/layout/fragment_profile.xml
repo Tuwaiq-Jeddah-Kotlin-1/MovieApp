@@ -27,110 +27,135 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gif_logo3">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center|top"
-            android:layout_marginTop="10dp"
-            android:orientation="vertical">
+            tools:ignore="UselessParent">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:fontFamily="@font/aldrich"
-                android:text="@string/my_profile"
-                android:textColor="@color/primary"
-                android:textSize="40sp" />
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txt_userName_profile"
-                android:layout_width="350dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                android:background="@color/white"
-                android:drawableStart="@drawable/ic_person"
-                android:drawablePadding="-30dp"
-                android:drawableTint="@color/backGround"
-                android:fontFamily="@font/aldrich"
-                android:gravity="center"
-                android:hint="@string/user_name"
-                android:textColor="@color/backGround"
-                android:textColorHint="@color/backGround"
-                android:textSize="20sp"
-                app:endIconMode="clear_text"
-                app:endIconTint="@color/backGround" />
+                android:layout_gravity="center|top"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
 
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txt_email_Profile"
-                android:layout_width="350dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:background="@color/textAd"
-                android:drawableStart="@drawable/ic_email"
-                android:drawablePadding="-30dp"
-                android:drawableTint="@color/backGround"
-                android:fontFamily="@font/aldrich"
-                android:gravity="center"
-                android:hint="@string/Email"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/backGround"
-                android:textColorHint="@color/backGround"
-                android:textSize="20sp"
-                app:endIconTint="@color/backGround" />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:fontFamily="@font/aldrich"
+                    android:text="@string/my_profile"
+                    android:textColor="@color/primary"
+                    android:textSize="40sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txt_Phone_profile"
-                android:layout_width="350dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="15dp"
-                android:background="@color/white"
-                android:drawableStart="@drawable/ic_phone"
-                android:drawablePadding="-30dp"
-                android:drawableTint="@color/backGround"
-                android:fontFamily="@font/aldrich"
-                android:gravity="center"
-                android:hint="@string/phone_number"
-                android:inputType="phone"
-                android:textColor="@color/black"
-                android:textColorHint="@color/black"
-                android:textSize="20sp"
-                app:endIconMode="clear_text"
-                app:endIconTint="@color/backGround" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_userName_profile"
+                    android:layout_width="350dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:layout_marginTop="64dp"
+                    android:drawableStart="@drawable/ic_person"
+                    android:drawablePadding="-30dp"
+                    android:drawableTint="@color/backGround"
+                    android:fontFamily="@font/aldrich"
+                    android:gravity="center"
+                    android:hint="@string/user_name"
+                    android:textColor="@color/backGround"
+                    android:textColorHint="@color/backGround"
+                    android:textSize="20sp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/backGround"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-            <TextView
-                android:id="@+id/logOut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/aldrich"
-                android:text="@string/sign_out"
-                android:textColor="@color/red"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                app:drawableStartCompat="@drawable/ic_log_out" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_email_Profile"
+                    android:layout_width="350dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="center"
+                    android:background="@color/textAd"
+                    android:drawableStart="@drawable/ic_email"
+                    android:drawablePadding="-30dp"
+                    android:drawableTint="@color/backGround"
+                    android:fontFamily="@font/aldrich"
+                    android:gravity="center"
+                    android:hint="@string/Email"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/backGround"
+                    android:textColorHint="@color/backGround"
+                    android:textSize="20sp"
+                    app:endIconTint="@color/backGround"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_userName_profile" />
 
-            <Button
-                android:id="@+id/btnSaveEdit"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="30dp"
-                android:layout_marginRight="30dp"
-                android:background="@drawable/btn_style"
-                android:fontFamily="@font/aldrich"
-                android:text="@string/save"
-                android:textColor="@color/backGround"
-                android:textStyle="bold" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_Phone_profile"
+                    android:layout_width="350dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:layout_marginTop="8dp"
+                    android:drawableStart="@drawable/ic_phone"
+                    android:drawablePadding="-30dp"
+                    android:drawableTint="@color/backGround"
+                    android:fontFamily="@font/aldrich"
+                    android:gravity="center"
+                    android:hint="@string/phone_number"
+                    android:inputType="phone"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="20sp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/backGround"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_email_Profile" />
+
+                <TextView
+                    android:id="@+id/logOut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/aldrich"
+                    android:text="@string/sign_out"
+                    android:textColor="#FF0000"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@drawable/ic_log_out"
+                    app:layout_constraintStart_toStartOf="@+id/txt_Phone_profile"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_Phone_profile" />
+
+                <Button
+                    android:id="@+id/btnSaveEdit"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/btn_style"
+                    android:fontFamily="@font/aldrich"
+                    android:text="@string/save"
+                    android:textColor="@color/black_light"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/primary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txt_Phone_profile" />
 
 
-        </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
     </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,15 +12,10 @@ import com.tuwaiq.movieapp.data.model.MovieRepository
 
 class MovieViewModel @ViewModelInject constructor(
     private val repository: MovieRepository,
-    @Assisted state: SavedStateHandle,
+    @Assisted private val state: SavedStateHandle,
 ) : ViewModel() {
 
-    companion object {
-        private const val CURRENT_QUERY = "current_query"
-        private const val EMPTY_QUERY = ""
-    }
-
-    private val currentQuery = state.getLiveData(CURRENT_QUERY, EMPTY_QUERY)
+    private val currentQuery = state.getLiveData(KEY, VALUE)
     val movies = currentQuery.switchMap { query ->
         if (query.isNotEmpty()) {
             repository.getSearchMovies(query).cachedIn(viewModelScope)
@@ -32,4 +27,10 @@ class MovieViewModel @ViewModelInject constructor(
     fun searchMovies(query: String) {
         currentQuery.value = query
     }
+
+    companion object {
+        private const val KEY = "current_query"
+        private const val VALUE = ""
+    }
+
 }
