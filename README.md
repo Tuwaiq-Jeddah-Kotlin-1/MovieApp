@@ -2,7 +2,9 @@
 <!---  <OWNER> faisalha98 <REPOSITORY> MovieApp. -->
 This is my final graduation project from Tuwaiq Academy that supports Tuwaiq 1000 program.
 
-# User Account -> email: f@gmail.com pass: 123456
+# User Account ->
+email: f@gmail.com 
+pass: 123456
 
 ## :scroll: Description
 ---
