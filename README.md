@@ -1,8 +1,7 @@
 # MovieApp
-# user account -> email: f@gmail.com pass: 123456
-
 <!---  <OWNER> faisalha98 <REPOSITORY> MovieApp. -->
-user account -> email: f@gmail.com pass: 123456
+This is my final graduation project from Tuwaiq Academy that supports Tuwaiq 1000 program.
+User Account -> email: f@gmail.com pass: 123456
 
 ## :scroll: Description
 ---
@@ -12,7 +11,7 @@ Movie application is the first interface for movie lovers,
 
 ## :bulb: Motivation and Context
 ---
-i take it a challinge for me , to do it in 1 week .
+
 
 ## :camera_flash: Screenshots
 ---
