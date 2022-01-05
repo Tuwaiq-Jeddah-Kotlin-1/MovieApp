@@ -53,13 +53,15 @@
                     android:id="@+id/language"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="60dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="50dp"
                     android:fontFamily="@font/aldrich"
                     android:text="@string/language"
                     android:textColor="@color/white"
                     android:textSize="22sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@drawable/ic_language"
+                    android:drawablePadding="5dp"/>
 
                 <View
                     android:id="@+id/divider"
@@ -108,7 +110,7 @@
                     android:text="@string/_1_0_0"
                     android:textColor="@color/primary"
                     android:textSize="14sp"
-                    android:layout_marginBottom="10dp"/>
+                    android:layout_marginBottom="16dp"/>
             </LinearLayout>
         </ScrollView>
     </FrameLayout>

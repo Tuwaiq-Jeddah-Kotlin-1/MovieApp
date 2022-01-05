@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- CardView -->
-    <style name="MyStyle.Cardview.White" parent="CardView">
-        <item name="cardBackgroundColor">@color/black_light</item>
-        <item name="backgroundTint">@color/black_light</item>
-    </style>
-
-    <style name="MyStyle.Cardview.dark" parent="CardView">
-        <item name="cardBackgroundColor">@color/black_light</item>
-        <item name="backgroundTint">@color/black_light</item>
-    </style>
     <!-- No action bar -->
     <style name="Theme.Transparent" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowFullscreen">true</item>
     </style>
-
-    <!-- Divider style -->
-    <style name="Widget.ToDo.Divider" parent="">
-        <item name="android:background">?attr/dividerHorizontal</item>
-    </style>
-
-
 </resources>

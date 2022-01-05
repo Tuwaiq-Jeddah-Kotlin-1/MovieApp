@@ -27,8 +27,8 @@
     <string name="language">Change Language</string>
     <string name="about_us">About us</string>
     <string name="version">Version</string>
-    <string name="about">Movie application is the first interface for movie lovers,
-    You can view the latest films currently showing in cinemas. </string>
+    <string name="about">Movie Application Is The First Interface For Movie Lovers,
+    You Can View And Search For The Latest Movies Currently Showing In Cinemas And You Can Add The Movie You Like To Your Favorite Page To Save It When You Need It Later. </string>
     <string name="_1_0_0">1.0.0</string>
     <string name="result_could_not_be_loaded">Result Could Not Be Loaded</string>
     <string name="retry">Retry</string>

@@ -28,8 +28,8 @@
     <string name="language">تغيير اللغة</string>
     <string name="about_us">من نحن</string>
     <string name="version">الإصدار</string>
-    <string name="about">تطبيق موڤي هو الواجهة الأولى لعشاق الأفلام,
-    تستطيع الإطلاع على أحدث الأفلام التي تعرض حاليّا في قاعات السينما.</string>
+    <string name="about">تطبيق موڤي هو الواجهة الأولى لمحبي الأفلام،
+     يمكنك مشاهدة أحدث الأفلام المعروضة حاليًا في دور السينما والبحث عنها ويمكنك إضافة الفيلم الذي يعجبك إلى صفحتك المفضلة لحفظه عند الحاجة إليه لاحقًا .</string>
     <string name="_1_0_0">1.0.0</string>
     <string name="result_could_not_be_loaded">النتيجة لايمكن عرضها</string>
     <string name="retry">إعادة المحاولة</string>

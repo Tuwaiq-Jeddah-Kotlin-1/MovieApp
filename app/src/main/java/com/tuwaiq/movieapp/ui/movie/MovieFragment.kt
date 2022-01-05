@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
+import android.view.inputmethod.EditorInfo
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
@@ -53,14 +54,15 @@ class MovieFragment : Fragment(R.layout.fragment_movie), MovieAdapter.OnItemClic
                 tvFailed.isVisible = loadState.source.refresh is LoadState.Error
 
                 //not found
-                if (loadState.source.refresh is LoadState.NotLoading &&
-                    loadState.append.endOfPaginationReached &&
-                    adapter.itemCount < 1
-                ) {
-                    rvMovie.isVisible = false
-                    tvNotFound.isVisible = true
-                } else {
-                    tvNotFound.isVisible = false
+                when {
+                    loadState.source.refresh is LoadState.NotLoading &&
+                            loadState.append.endOfPaginationReached && adapter.itemCount < 1 -> {
+                        rvMovie.isVisible = false
+                        tvNotFound.isVisible = true
+                    }
+                    else -> {
+                        tvNotFound.isVisible = false
+                    }
                 }
             }
         }
@@ -79,6 +81,7 @@ class MovieFragment : Fragment(R.layout.fragment_movie), MovieAdapter.OnItemClic
 
         val searchItem = menu.findItem(R.id.action_search)
         val searchView = searchItem.actionView as SearchView
+        searchView.imeOptions = searchView.imeOptions or EditorInfo.IME_FLAG_NO_EXTRACT_UI
 
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
