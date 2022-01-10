@@ -70,7 +70,7 @@
                     app:startIconTint="@color/backGround">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/emailED_in"
+                        android:id="@+id/emailIn"
                         android:layout_width="300dp"
                         android:layout_height="match_parent"
                         android:background="@color/white"
@@ -98,7 +98,7 @@
                     app:startIconTint="@color/backGround">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/passwordEd_in"
+                        android:id="@+id/passwordIn"
                         android:layout_width="300dp"
                         android:layout_height="match_parent"
                         android:background="@color/white_dark"
@@ -139,7 +139,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
 
                 <Button
-                    android:id="@+id/btnSignup"
+                    android:id="@+id/btnSignIn"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -166,12 +166,12 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/btnSignup"
-                    app:layout_constraintTop_toBottomOf="@+id/btnSignup"
+                    app:layout_constraintStart_toStartOf="@+id/btnSignIn"
+                    app:layout_constraintTop_toBottomOf="@+id/btnSignIn"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
-                    android:id="@+id/txt_dont_have_account"
+                    android:id="@+id/accountIn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -182,7 +182,7 @@
                     android:textColor="@color/primary"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textView2"
-                    app:layout_constraintTop_toBottomOf="@+id/btnSignup"
+                    app:layout_constraintTop_toBottomOf="@+id/btnSignIn"
                     app:layout_constraintVertical_bias="1.0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>

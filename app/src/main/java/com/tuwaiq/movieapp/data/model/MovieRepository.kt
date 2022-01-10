@@ -15,6 +15,6 @@ class MovieRepository @Inject constructor(private val movieApi: MovieApi) {
             pagingSourceFactory = { MoviePagingSource(movieApi, null) }).liveData
 
     fun getSearchMovies(query: String) =
-        Pager(PagingConfig(5,20,false),
+        Pager(PagingConfig(5, 20, false),
             pagingSourceFactory = { MoviePagingSource(movieApi, query) }).liveData
 }

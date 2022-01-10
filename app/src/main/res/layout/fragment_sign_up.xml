@@ -71,7 +71,7 @@
                     app:startIconTint="@color/backGround">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/userNameEd"
+                        android:id="@+id/userNameUp"
                         android:layout_width="300dp"
                         android:layout_height="wrap_content"
                         android:background="@color/white"
@@ -99,7 +99,7 @@
                     app:startIconTint="@color/backGround">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/emailEd"
+                        android:id="@+id/emailUp"
                         android:layout_width="300dp"
                         android:layout_height="match_parent"
                         android:background="@color/white"
@@ -127,7 +127,7 @@
                     app:startIconTint="@color/backGround">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/passwordEd"
+                        android:id="@+id/passwordUp"
                         android:layout_width="300dp"
                         android:layout_height="match_parent"
                         android:background="@color/white"
@@ -156,7 +156,7 @@
                     app:startIconTint="@color/backGround">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/PhoneEd"
+                        android:id="@+id/PhoneUp"
                         android:layout_width="300dp"
                         android:layout_height="match_parent"
                         android:background="@color/white"
@@ -169,7 +169,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:id="@+id/btnSignup"
+                    android:id="@+id/btnSignUp"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -195,13 +195,13 @@
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/btnSignup"
-                    app:layout_constraintTop_toBottomOf="@+id/btnSignup"
+                    app:layout_constraintHorizontal_bias="0.031"
+                    app:layout_constraintStart_toStartOf="@+id/btnSignUp"
+                    app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
                     app:layout_constraintVertical_bias="0.0" />
 
                 <TextView
-                    android:id="@+id/txt_have_account"
+                    android:id="@+id/accountUp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -212,7 +212,7 @@
                     android:textColor="@color/primary"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/textView2"
-                    app:layout_constraintTop_toBottomOf="@+id/btnSignup"
+                    app:layout_constraintTop_toBottomOf="@+id/btnSignUp"
                     app:layout_constraintVertical_bias="1.0" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
