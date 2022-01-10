@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">MovieApp</string>
+    <string name="search">Search</string>
+    <string name="movies">Movies</string>
+    <string name="favorites">Favorites</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="write_your_email_to_reset_password">Write your email to reset password</string>
+    <string name="send">Send</string>
+    <string name="failed_to_load_data">failed to load data</string>
+    <string name="movie_not_found">The Movie is not found</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="Email">Email</string>
+    <string name="sign_out">Sign out</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="user_name">User Name</string>
+    <string name="my_profile">My Profile</string>
+    <string name="save">Save</string>
+    <string name="sign_in">Sign In</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="Sign_in">Sign in</string>
+    <string name="don_t_have_an">Don’t have an</string>
+    <string name="account">account?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="password">Password</string>
+    <string name="language">Change Language</string>
+    <string name="about_us">About us</string>
+    <string name="version">Version</string>
+    <string name="about">Movie Application Is The First Interface For Movie Lovers,
+    You Can View And Search For The Latest Movies Currently Showing In Cinemas And You Can Add The Movie You Like To Your Favorite Page To Save It When You Need It Later. </string>
+    <string name="_1_0_0">1.0.0</string>
+    <string name="result_could_not_be_loaded">Result Could Not Be Loaded</string>
+    <string name="retry">Retry</string>
 </resources>

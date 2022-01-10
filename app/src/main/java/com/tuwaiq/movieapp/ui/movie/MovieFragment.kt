@@ -1,0 +1,119 @@
+package com.tuwaiq.movieapp.ui.movie
+
+import android.content.Context
+import android.content.SharedPreferences
+import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.View
+import android.view.inputmethod.EditorInfo
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
+import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import androidx.paging.LoadState
+import com.google.firebase.auth.FirebaseAuth
+import com.tuwaiq.movieapp.R
+import com.tuwaiq.movieapp.data.model.Movie
+import com.tuwaiq.movieapp.databinding.FragmentMovieBinding
+import com.tuwaiq.movieapp.utils.GetUserInfo
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class MovieFragment : Fragment(R.layout.fragment_movie), MovieAdapter.OnItemClickListener {
+
+    private val viewModel by viewModels<MovieViewModel>()
+    private var _binding: FragmentMovieBinding? = null
+    private val binding get() = _binding!!
+    private val auth = FirebaseAuth.getInstance()
+    private lateinit var sharedPreferences: SharedPreferences
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentMovieBinding.bind(view)
+
+        sharedPreferences =
+            this.requireActivity().getSharedPreferences("preference", Context.MODE_PRIVATE)
+
+        val adapter = MovieAdapter(this)
+
+        binding.apply {
+            rvMovie.setHasFixedSize(true)
+            rvMovie.adapter = adapter.withLoadStateHeaderAndFooter(
+                header = MovieLoadStateAdapter { adapter.retry() },
+                footer = MovieLoadStateAdapter { adapter.retry() }
+            )
+            btnTryAgain.setOnClickListener {
+                adapter.retry()
+            }
+        }
+        GetUserInfo().getUserInfo(auth.uid.toString()).observe(viewLifecycleOwner, {
+            sharedPreferences.edit()
+                .putString("spEmail", it.email)
+                .putString("spPhoneNumber", it.number)
+                .putString("spUserName", it.userName)
+                .apply()
+        })
+
+        viewModel.movies.observe(viewLifecycleOwner) {
+            adapter.submitData(viewLifecycleOwner.lifecycle, it)
+        }
+
+        adapter.addLoadStateListener { loadState ->
+            binding.apply {
+                progressBar.isVisible = loadState.source.refresh is LoadState.Loading
+                rvMovie.isVisible = loadState.source.refresh is LoadState.NotLoading
+                btnTryAgain.isVisible = loadState.source.refresh is LoadState.Error
+                tvFailed.isVisible = loadState.source.refresh is LoadState.Error
+
+                //not found
+                when {
+                    loadState.source.refresh is LoadState.NotLoading &&
+                            loadState.append.endOfPaginationReached && adapter.itemCount < 1 -> {
+                        rvMovie.isVisible = false
+                        tvNotFound.isVisible = true
+                    }
+                    else -> {
+                        tvNotFound.isVisible = false
+                    }
+                }
+            }
+        }
+
+        setHasOptionsMenu(true)
+    }
+
+    override fun onItemClick(movie: Movie) {
+        val action = MovieFragmentDirections.actionNavMovieToNavDetails(movie)
+        findNavController().navigate(action)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_search, menu)
+
+        val searchItem = menu.findItem(R.id.action_search)
+        val searchView = searchItem.actionView as SearchView
+        searchView.imeOptions = searchView.imeOptions or EditorInfo.IME_FLAG_NO_EXTRACT_UI
+
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                if (query != null) {
+                    viewModel.searchMovies(query)
+                }
+                return true
+            }
+
+            override fun onQueryTextChange(query: String?): Boolean {
+                if (query != null) {
+                    viewModel.searchMovies(query)
+                }
+                return true
+            }
+
+        })
+    }
+
+}
