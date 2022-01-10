@@ -28,9 +28,7 @@ class GetUserInfo() {
                             val userEmail = it.result!!.getString("email")
                             val userPhone = it.result!!.getString("number")
                             val userName = it.result!!.getString("userName")//moreInfo
-                            signedUser.postValue(User(userName!!,userEmail!!,userPhone!!))
-
-                            Log.e("user Info","userName ${userEmail.toString()} \n ${userName.toString()}")
+                            signedUser.postValue(User(userName!!, userEmail!!, userPhone!!))
                         } else {
                             Log.e("error \n", "Error")
                         }

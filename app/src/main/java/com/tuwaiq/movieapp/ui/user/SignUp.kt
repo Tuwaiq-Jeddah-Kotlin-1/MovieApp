@@ -58,10 +58,8 @@ class SignUp : Fragment(R.layout.fragment_sign_up) {
                 sharedPreferences.edit()
                     .putString("spUserName", it).apply()
             })
-            Utils.message.observe(viewLifecycleOwner, {
-                it.getContentIfNotHandled()?.let { massage ->
+            Utils.message.observe(viewLifecycleOwner, { massage ->
                     Toast.makeText(context, massage, Toast.LENGTH_LONG).show()
-                }
             })
         }
     }

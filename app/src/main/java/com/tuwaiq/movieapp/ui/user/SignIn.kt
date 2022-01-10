@@ -32,13 +32,13 @@ class SignIn : Fragment(R.layout.fragment_sign_in) {
         with(binding) {
 
             btnSignIn.setOnClickListener {
-                GetUserInfo().getUserInfo(auth.uid.toString()).observe(viewLifecycleOwner, {
+                /*GetUserInfo().getUserInfo(auth.uid.toString()).observe(viewLifecycleOwner, {
                     sharedPreferences.edit()
                         .putString("spEmail", it.email)
                         .putString("spPhoneNumber", it.number)
                         .putString("spUserName", it.userName)
                         .apply()
-                })
+                })*/
                 viewModel.signIn(emailIn.text.toString().trim(), passwordIn.text.toString().trim())
             }
             viewModel.message.observe(viewLifecycleOwner, {
@@ -54,10 +54,8 @@ class SignIn : Fragment(R.layout.fragment_sign_in) {
                 findNavController().navigate(R.id.action_sign_in_to_forgot_pass)
             }
 
-            Utils.message.observe(viewLifecycleOwner, {
-                it.getContentIfNotHandled()?.let { massage ->
+            Utils.message.observe(viewLifecycleOwner, { massage ->
                     Toast.makeText(context, massage, Toast.LENGTH_LONG).show()
-                }
             })
 
             val remembered = sharedPreferences.getBoolean("remember", false)

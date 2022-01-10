@@ -1,5 +1,7 @@
 package com.tuwaiq.movieapp.ui.movie
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -12,9 +14,11 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
+import com.google.firebase.auth.FirebaseAuth
 import com.tuwaiq.movieapp.R
 import com.tuwaiq.movieapp.data.model.Movie
 import com.tuwaiq.movieapp.databinding.FragmentMovieBinding
+import com.tuwaiq.movieapp.utils.GetUserInfo
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,10 +27,15 @@ class MovieFragment : Fragment(R.layout.fragment_movie), MovieAdapter.OnItemClic
     private val viewModel by viewModels<MovieViewModel>()
     private var _binding: FragmentMovieBinding? = null
     private val binding get() = _binding!!
+    private val auth = FirebaseAuth.getInstance()
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentMovieBinding.bind(view)
+
+        sharedPreferences =
+            this.requireActivity().getSharedPreferences("preference", Context.MODE_PRIVATE)
 
         val adapter = MovieAdapter(this)
 
@@ -39,8 +48,14 @@ class MovieFragment : Fragment(R.layout.fragment_movie), MovieAdapter.OnItemClic
             btnTryAgain.setOnClickListener {
                 adapter.retry()
             }
-
         }
+        GetUserInfo().getUserInfo(auth.uid.toString()).observe(viewLifecycleOwner, {
+            sharedPreferences.edit()
+                .putString("spEmail", it.email)
+                .putString("spPhoneNumber", it.number)
+                .putString("spUserName", it.userName)
+                .apply()
+        })
 
         viewModel.movies.observe(viewLifecycleOwner) {
             adapter.submitData(viewLifecycleOwner.lifecycle, it)

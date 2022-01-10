@@ -1,10 +1,12 @@
 package com.tuwaiq.movieapp.ui.user
 
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavDirections
 import com.google.firebase.auth.FirebaseAuth
+import com.tuwaiq.movieapp.utils.GetUserInfo
 import com.tuwaiq.movieapp.utils.Utils.checkValidationIn
 
 class SignInViewModel : ViewModel() {
@@ -17,8 +19,8 @@ class SignInViewModel : ViewModel() {
     val message: LiveData<String> = statusMessage
 
 
-    fun signIn(email: String, password: String): LiveData<User> {
-        val signInUser = MutableLiveData<User>()
+    fun signIn(email: String, password: String) {
+
         if (checkValidationIn(email, password)) {
             //save to the Authentication
             auth.signInWithEmailAndPassword(email, password)
@@ -36,11 +38,8 @@ class SignInViewModel : ViewModel() {
         } else {
             statusMessage.value = "please enter all fields"
         }
-        return signInUser
+
     }
-    /*fun getUserInfo(userID: String): LiveData<User>{
-        val
-    }*/
 
 
 }
