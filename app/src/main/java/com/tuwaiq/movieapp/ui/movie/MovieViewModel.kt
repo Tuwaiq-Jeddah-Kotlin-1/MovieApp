@@ -32,5 +32,4 @@ class MovieViewModel @ViewModelInject constructor(
         private const val KEY = "current_query"
         private const val VALUE = ""
     }
-
 }

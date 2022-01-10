@@ -4,15 +4,15 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.tuwaiq.movieapp.data.local.FavoriteMovie
-import com.tuwaiq.movieapp.data.local.FavoriteMovieRepository
 import com.tuwaiq.movieapp.data.model.Movie
+import com.tuwaiq.movieapp.data.model.MovieRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class DetailsMovieModel @ViewModelInject constructor(
-    private val repository: FavoriteMovieRepository,
+    private val repository: MovieRepository,
 ) : ViewModel() {
     fun addToFavorite(movie: Movie) {
         CoroutineScope(Dispatchers.IO).launch {

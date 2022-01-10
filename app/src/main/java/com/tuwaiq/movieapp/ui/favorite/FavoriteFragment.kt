@@ -36,8 +36,6 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
                 rvMovie.adapter = adapter
             }
         })
-
-
         adapter.setOnItemClickCallback(object : FavoriteAdapter.OnItemClickCallback {
             override fun onItemClick(favoriteMovie: FavoriteMovie) {
                 val movie = Movie(
