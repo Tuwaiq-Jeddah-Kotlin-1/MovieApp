@@ -4,7 +4,6 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.SharedPreferences
-import android.content.res.Configuration
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -12,9 +11,8 @@ import androidx.core.app.ActivityCompat.recreate
 import androidx.fragment.app.Fragment
 import com.tuwaiq.movieapp.R
 import com.tuwaiq.movieapp.utils.SettingUtil
-import java.util.*
 
-class SettingFragment : Fragment(R.layout.fragment_setting) {
+class Setting : Fragment(R.layout.fragment_setting) {
 
     private lateinit var languageTextView: TextView
     private lateinit var sharedPreferences: SharedPreferences
@@ -56,6 +54,6 @@ class SettingFragment : Fragment(R.layout.fragment_setting) {
             recreate(context as Activity)
             dialog.dismiss()
         }
-         mBuilder.create().show()
+        mBuilder.create().show()
     }
 }

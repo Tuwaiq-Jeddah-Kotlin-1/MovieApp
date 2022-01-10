@@ -27,6 +27,5 @@ class MoviePagingSource @Inject constructor(
         } catch (e: HttpException) {
             LoadResult.Error(e)
         }
-
     }
 }
