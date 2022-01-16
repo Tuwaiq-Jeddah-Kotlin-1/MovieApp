@@ -28,6 +28,12 @@ android {
         viewBinding true
     }
 
+    lintOptions {
+
+        checkReleaseBuilds false
+
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -89,6 +95,6 @@ dependencies {
     // WorkManager
     implementation 'androidx.work:work-runtime-ktx:2.7.1'
 }
-kapt {
+/*kapt {
     generateStubs = true
-}
+}*/

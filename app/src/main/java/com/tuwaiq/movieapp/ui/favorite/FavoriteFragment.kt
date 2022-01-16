@@ -1,23 +1,15 @@
 package com.tuwaiq.movieapp.ui.favorite
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
-import androidx.room.Entity
-import androidx.room.PrimaryKey
 import com.tuwaiq.movieapp.R
 import com.tuwaiq.movieapp.data.local.FavoriteMovie
 import com.tuwaiq.movieapp.data.model.Movie
 import com.tuwaiq.movieapp.databinding.FragmentFavoriteBinding
 import dagger.hilt.android.AndroidEntryPoint
-import io.grpc.InternalChannelz.id
 
 @AndroidEntryPoint
 class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
@@ -29,7 +21,7 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
 
         val adapter = FavoriteAdapter()
 
-        viewModel.movies.observe(viewLifecycleOwner, Observer {
+        viewModel.movies.observe(viewLifecycleOwner,{
             adapter.setMovieList(it.distinct())
             binding.apply {
                 rvMovie.setHasFixedSize(true)
@@ -43,7 +35,12 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
                     favoriteMovie.overview,
                     favoriteMovie.poster_path,
                     favoriteMovie.original_title,
-                    favoriteMovie.vote_average
+                    favoriteMovie.vote_average,
+                    favoriteMovie.release_date,
+                    favoriteMovie.original_language,
+                    favoriteMovie.popularity,
+                    favoriteMovie.vote_count,
+                    favoriteMovie.adult
                 )
                 val action = FavoriteFragmentDirections.actionNavFavoriteToNavDetails(movie)
                 findNavController().navigate(action)

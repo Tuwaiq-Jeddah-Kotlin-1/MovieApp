@@ -20,8 +20,7 @@ object AppModule {
     @Singleton
     @Provides
     fun provideFavMovieDatabase(@ApplicationContext app: Context) =
-        Room.databaseBuilder(app, FavoriteMovieDatabase::class.java, "movie_db"
-        ).build()
+        Room.databaseBuilder(app, FavoriteMovieDatabase::class.java,"movie_db").build()
 
     @Singleton
     @Provides

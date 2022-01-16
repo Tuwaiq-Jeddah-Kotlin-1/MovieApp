@@ -22,7 +22,12 @@ class DetailsMovieModel @ViewModelInject constructor(
                     movie.original_title,
                     movie.overview,
                     movie.poster_path,
-                    movie.vote_average.toDouble()
+                    movie.vote_average.toDouble(),
+                    movie.release_date,
+                    movie.original_language,
+                    movie.popularity.toDouble(),
+                    movie.vote_count,
+                    movie.adult
                 )
             )
         }

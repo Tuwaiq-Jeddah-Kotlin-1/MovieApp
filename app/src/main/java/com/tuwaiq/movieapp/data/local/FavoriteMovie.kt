@@ -14,9 +14,14 @@ data class FavoriteMovie(
     val original_title: String,
     val overview: String?,
     val poster_path: String,
-    val vote_average: Double
+    val vote_average: Double,
+    val release_date: String,
+    val original_language: String,
+    val popularity: Double,
+    val vote_count: Int,
+    val adult: Boolean
 
-    ) : Serializable, Parcelable {
+) : Serializable, Parcelable{
     @IgnoredOnParcel
     @PrimaryKey(autoGenerate = true)
     var id: Int = 0

@@ -19,6 +19,7 @@
         <action
             android:id="@+id/action_sign_in_to_movieFragment"
             app:destination="@id/nav_movie"
+            app:launchSingleTop="false"
             app:popUpTo="@id/sign_in"
             app:popUpToInclusive="true" />
     </fragment>

@@ -54,9 +54,14 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                         progressBar.isVisible = false
                         tvDescription.isVisible = true
                         tvMovieTitle.isVisible = true
-                        tvRating.isVisible = true
+                        tvMovieRate.isVisible = true
                         toggleFavorite.isVisible = true
                         ivShareMovie.isVisible = true
+                        tvMovieTime.isVisible = true
+                        tvMovieLanguage.isVisible = true
+                        tvMoviePopularity.isVisible = true
+                        tvPersonsRate.isVisible = true
+                        tvMovieAdult.isVisible = true
                         return false
                     }
 
@@ -64,8 +69,12 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                 .into(ivMoviePoster)
             tvDescription.text = movie.overview
             tvMovieTitle.text = movie.original_title
-            tvRating.text = movie.vote_average.toString()
-
+            tvMovieRate.text = movie.vote_average.toString()
+            tvMovieTime.text = movie.release_date
+            tvMovieLanguage.text = movie.original_language
+            tvMoviePopularity.text = movie.popularity.toString()
+            tvPersonsRate.text = movie.vote_count.toString()
+            tvMovieAdult.text = movie.adult.toString()
 
             var _isChecked = false
             viewModel.checkMovie(movie.id)
