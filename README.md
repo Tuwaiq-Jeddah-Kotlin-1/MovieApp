@@ -19,6 +19,7 @@
 ## •	Paging 3
 ## •	Shared Preference
 ## •	Glide
+## •  WorkManager
 ## •	Room Database (Favourites Movies)
 
 ## :camera_flash: Screenshots
