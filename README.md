@@ -12,15 +12,15 @@ Movie Application Is The First Interface For Movie Lovers,
 
 ## :bulb: Motivation and Context
 ---
-•	MVVM
-•	Firebase Authentication
-•	Retrofit
-•	Data-Binding
-•	Dagger Hilt 
-•	Paging 3
-•	Shared Preference
-•	Glide
-•	Room Database (Favourites Movies)
+## •	MVVM
+## •	Firebase Authentication
+## •	Retrofit
+## •	View-Binding
+## •	Dagger Hilt 
+## •	Paging 3
+## •	Shared Preference
+## •	Glide
+## •	Room Database (Favourites Movies)
 
 ## :camera_flash: Screenshots
 ---
