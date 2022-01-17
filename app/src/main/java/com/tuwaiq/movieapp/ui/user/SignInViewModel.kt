@@ -1,12 +1,10 @@
 package com.tuwaiq.movieapp.ui.user
 
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavDirections
 import com.google.firebase.auth.FirebaseAuth
-import com.tuwaiq.movieapp.utils.GetUserInfo
 import com.tuwaiq.movieapp.utils.Utils.checkValidationIn
 
 class SignInViewModel : ViewModel() {
@@ -27,7 +25,7 @@ class SignInViewModel : ViewModel() {
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
 
-                        statusMessage.value = "Sign in successful"
+                        //statusMessage.value = "Sign in successful"
                         _navigateScreen.value = SignInDirections.actionSignInToMovieFragment()
                     } else {
                         // if the registration is not successful then show error massage

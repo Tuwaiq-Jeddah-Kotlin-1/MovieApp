@@ -39,7 +39,7 @@ class SignUpViewModel : ViewModel() {
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        statusMessage.value = "You were registered successful"
+                       // statusMessage.value = "You were registered successful"
                         //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                         saveAccount(account)
                         emailSP.value = email

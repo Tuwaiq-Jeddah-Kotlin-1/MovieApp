@@ -32,13 +32,6 @@ class SignIn : Fragment(R.layout.fragment_sign_in) {
         with(binding) {
 
             btnSignIn.setOnClickListener {
-                /*GetUserInfo().getUserInfo(auth.uid.toString()).observe(viewLifecycleOwner, {
-                    sharedPreferences.edit()
-                        .putString("spEmail", it.email)
-                        .putString("spPhoneNumber", it.number)
-                        .putString("spUserName", it.userName)
-                        .apply()
-                })*/
                 viewModel.signIn(emailIn.text.toString().trim(), passwordIn.text.toString().trim())
             }
             viewModel.message.observe(viewLifecycleOwner, {
