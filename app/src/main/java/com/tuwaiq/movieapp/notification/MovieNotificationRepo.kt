@@ -11,7 +11,7 @@ class MovieNotificationRepo {
     private val notification = " Did You Check the New Movies ? "
     fun myNotification(mainActivity: MainActivity) {
         val myWorkRequest = PeriodicWorkRequest
-            .Builder(MovieWorker::class.java, 15, TimeUnit.MINUTES)
+            .Builder(MovieWorker::class.java, 24, TimeUnit.HOURS)
             .setInputData(workDataOf(
                 "title" to "Movie App",
                 "message" to notification)

@@ -63,7 +63,7 @@
                     android:background="@color/white"
                     android:layout_marginTop="35dp"
                     android:drawableStart="@drawable/ic_person"
-                    android:drawablePadding="-30dp"
+                    android:drawablePadding="-32dp"
                     android:drawableTint="@color/backGround"
                     android:fontFamily="@font/aldrich"
                     android:gravity="center"
