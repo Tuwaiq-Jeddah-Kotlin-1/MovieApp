@@ -33,4 +33,5 @@
     <string name="_1_0_0">1.0.0</string>
     <string name="result_could_not_be_loaded">النتيجة لايمكن عرضها</string>
     <string name="retry">إعادة المحاولة</string>
+    <string name="you_didn_t_add_to_favourite">You didn\'t add to favourite</string>
 </resources>

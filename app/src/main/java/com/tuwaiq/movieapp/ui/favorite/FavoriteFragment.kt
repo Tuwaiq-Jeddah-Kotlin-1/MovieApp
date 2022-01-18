@@ -2,6 +2,7 @@ package com.tuwaiq.movieapp.ui.favorite
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -24,8 +25,17 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
         viewModel.movies.observe(viewLifecycleOwner,{
             adapter.setMovieList(it.distinct())
             binding.apply {
+                emptyFavList.isVisible = false
+                emptyTextList.isVisible = false
                 rvMovie.setHasFixedSize(true)
                 rvMovie.adapter = adapter
+                if (it.isNullOrEmpty()) {
+                    emptyFavList.isVisible = true
+                    emptyTextList.isVisible = true
+                }else{
+                    emptyFavList.isVisible = false
+                    emptyTextList.isVisible = false
+                }
             }
         })
         adapter.setOnItemClickCallback(object : FavoriteAdapter.OnItemClickCallback {

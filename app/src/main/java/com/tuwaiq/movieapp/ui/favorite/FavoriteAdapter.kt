@@ -1,5 +1,6 @@
 package com.tuwaiq.movieapp.ui.favorite
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +21,7 @@ class FavoriteAdapter : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>
         this.onItemClickCallback = onItemClickCallback
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setMovieList(list: List<FavoriteMovie>) {
         this.list = list
         notifyDataSetChanged()
