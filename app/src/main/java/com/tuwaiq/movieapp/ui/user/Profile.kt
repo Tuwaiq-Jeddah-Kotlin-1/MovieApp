@@ -31,16 +31,11 @@ class Profile : Fragment(R.layout.fragment_profile) {
         val sp3 = sharedPreferences.getString("spPhoneNumber", " ")
 
         with(binding) {
+            userNameProfile.setText(sp1)
+            emailProfile.setText(sp2)
+            PhoneProfile.setText(sp3)
 
             emailProfile.isEnabled = false
-
-            GetUserInfo().getUserInfo(auth.uid.toString()).observe(viewLifecycleOwner, {
-                sharedPreferences.edit()
-                    .putString("spEmail", it.email)
-                    .putString("spPhoneNumber", it.number)
-                    .putString("spUserName", it.userName)
-                    .apply()
-            })
 
             viewModel.navigateScreen.observe(viewLifecycleOwner, {
                 findNavController().navigate(it)
@@ -54,14 +49,14 @@ class Profile : Fragment(R.layout.fragment_profile) {
             }
             btnSaveEdit.setOnClickListener {
                 viewModel.saveProfile(userNameProfile.text.toString(), PhoneProfile.text.toString())
+                GetUserInfo().getUserInfo(auth.uid.toString()).observe(viewLifecycleOwner, {
+                    sharedPreferences.edit()
+                        .putString("spEmail", it.email)
+                        .putString("spPhoneNumber", it.number)
+                        .putString("spUserName", it.userName)
+                        .apply()
+                })
             }
-
-            userNameProfile.setText(sp1)
-            emailProfile.setText(sp2)
-            PhoneProfile.setText(sp3)
         }
-
-
     }
-
 }

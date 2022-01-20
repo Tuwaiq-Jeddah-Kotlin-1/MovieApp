@@ -19,7 +19,6 @@ class FavoriteFragment : Fragment(R.layout.fragment_favorite) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentFavoriteBinding.bind(view)
-
         val adapter = FavoriteAdapter()
 
         viewModel.movies.observe(viewLifecycleOwner,{

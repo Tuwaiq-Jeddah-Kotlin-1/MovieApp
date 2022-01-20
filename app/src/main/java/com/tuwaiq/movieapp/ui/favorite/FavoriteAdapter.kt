@@ -31,7 +31,6 @@ class FavoriteAdapter : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>
         RecyclerView.ViewHolder(binding.root) {
         fun bind(favoriteMovie: FavoriteMovie) {
             with(binding) {
-
                 Glide.with(itemView)
                     .load("${favoriteMovie.baseUrl}${favoriteMovie.poster_path}")
                     .centerCrop()
