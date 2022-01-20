@@ -41,14 +41,25 @@ class Setting : Fragment(R.layout.fragment_setting) {
     private fun showChangeLanguage() {
         val languageList = arrayOf("English", "العربية")
         val mBuilder = AlertDialog.Builder(this.context)
+        var current = 0
+        sharedPreferences =
+            this.requireActivity().getSharedPreferences("Settings", Context.MODE_PRIVATE)
+        val lang = sharedPreferences.getString("MY_LANG", "")!!
+        if (lang == "en") {
+            current = 0
+        } else if (lang == "ar") {
+            current = 1
+        }
         mBuilder.setTitle("Choose Language")
-        mBuilder.setSingleChoiceItems(languageList, -1) { dialog, which ->
-            when (which) {
-                0 -> {
-                    saveLang("en")
-                }
-                1 -> {
-                    saveLang("ar")
+        mBuilder.setSingleChoiceItems(languageList, current) { dialog, which ->
+            when {
+                current!=which -> when (which) {
+                    0 -> {
+                        saveLang("en")
+                    }
+                    1 -> {
+                        saveLang("ar")
+                    }
                 }
             }
             recreate(context as Activity)
