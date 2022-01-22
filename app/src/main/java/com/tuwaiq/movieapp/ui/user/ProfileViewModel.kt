@@ -12,14 +12,10 @@ class ProfileViewModel : ViewModel() {
     private val _navigateScreen = MutableLiveData<NavDirections>()
     val navigateScreen: LiveData<NavDirections> = _navigateScreen
 
-    private val statusMessage = MutableLiveData<String>()
-    val message: LiveData<String> = statusMessage
-
     fun saveProfile(userName: String, phone: String) {
         val uId = FirebaseAuth.getInstance().currentUser?.uid
         val upDateUserData = Firebase.firestore.collection("UserAccount")
         upDateUserData.document(uId.toString())
             .update("number", phone, "userName", userName)
-        statusMessage.value = "edit is successful"
     }
 }
