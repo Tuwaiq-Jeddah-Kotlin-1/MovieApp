@@ -64,7 +64,6 @@ class SignUpViewModel : ViewModel() {
             db.document("$uid").set(account)
             withContext(Dispatchers.Main) {
                 _navigateScreen.value = SignUpDirections.actionSignUpToMovieFragment()
-                statusMessage.value = "saved data"
             }
         } catch (e: Exception) {
             withContext(Dispatchers.Main) {
