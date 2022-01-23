@@ -1,26 +1,37 @@
-# MovieApp
+## :star: MoviesApp
+<img src="https://user-images.githubusercontent.com/91477096/150673029-1f2272d0-5ef0-424f-9bd3-3cc202648514.png" width="260"> 
 <!---  <OWNER> faisalha98 <REPOSITORY> MovieApp. -->
-## This is my final graduation project from Tuwaiq Academy that supports Tuwaiq 1000 program.
+This is my final graduation project from Tuwaiq Academy that supports Tuwaiq 1000 program.
 
-# User Account ->  Email: f@gmail.com , Pass: 123456
+## :memo: Demo Account
+Email: f@gmail.com , Pass: 123456
 
 ## :scroll: Description
 ---
-## Movie Application Is The First Interface For Movie Lovers ,You Can View And Search For The Latest Movies Currently Showing In Cinemas And You Can Add The Movie You Like To Your Favorite Page To Save It When You Need It Later .
+ Movie Application Is The First Interface For Movie Lovers ,You Can View And Search For The Latest Movies Currently Showing In Cinemas And You Can Add The Movie You Like To Your Favorite Page To Save It When You Need It Later .
 
 
 ## :bulb: Motivation and Context
 ---
-## •	MVVM
-## •	Firebase Authentication
-## •	Retrofit
-## •	View-Binding
-## •	Dagger Hilt 
-## •	Paging 3
-## •	Shared Preference
-## •	Glide
-## •  WorkManager
-## •	Room Database (Favourites Movies)
+ •	MVVM
+ 
+ •	Firebase Authentication
+ 
+ •	Retrofit
+ 
+ •	View-Binding
+ 
+ •	Dagger Hilt 
+ 
+ •	Paging 3
+ 
+ •	Shared Preference
+ 
+ •	Glide
+ 
+ • WorkManager
+ 
+ •	Room Database (Favourites Movies)
 
 ## :camera_flash: Screenshots
 ---
