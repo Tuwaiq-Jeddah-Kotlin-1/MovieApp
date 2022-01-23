@@ -1,4 +1,4 @@
-# MoviesApp
+## :star: MoviesApp
 <img src="https://user-images.githubusercontent.com/91477096/150673029-1f2272d0-5ef0-424f-9bd3-3cc202648514.png" width="260"> 
 <!---  <OWNER> faisalha98 <REPOSITORY> MovieApp. -->
 This is my final graduation project from Tuwaiq Academy that supports Tuwaiq 1000 program.
