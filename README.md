@@ -14,14 +14,23 @@ Email: f@gmail.com , Pass: 123456
 ## :bulb: Motivation and Context
 ---
  •	MVVM
+ 
  •	Firebase Authentication
+ 
  •	Retrofit
+ 
  •	View-Binding
+ 
  •	Dagger Hilt 
+ 
  •	Paging 3
+ 
  •	Shared Preference
+ 
  •	Glide
- •  WorkManager
+ 
+ • WorkManager
+ 
  •	Room Database (Favourites Movies)
 
 ## :camera_flash: Screenshots
