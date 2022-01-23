@@ -33,9 +33,7 @@ class FavoriteAdapter : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>
             with(binding) {
                 Glide.with(itemView)
                     .load("${favoriteMovie.baseUrl}${favoriteMovie.poster_path}")
-                    .centerCrop()
-                    .transition(DrawableTransitionOptions.withCrossFade())
-                    .error(R.drawable.ic_error)
+                    .error(R.drawable.logo)
                     .into(ivMoviePoster)
                 tvMovieTitle.text = favoriteMovie.original_title
                 binding.root.setOnClickListener { onItemClickCallback?.onItemClick(favoriteMovie) }

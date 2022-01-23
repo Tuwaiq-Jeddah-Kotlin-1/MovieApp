@@ -1,7 +1,9 @@
 package com.tuwaiq.movieapp.ui.movie
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -29,7 +31,7 @@ class MovieAdapter(private val listener: OnItemClickListener) :
     inner class MovieViewHolder(private val binding: ItemMovieBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        init {
+        /*init {
             binding.root.setOnClickListener {
                 val position = bindingAdapterPosition
                 if (position != RecyclerView.NO_POSITION) {
@@ -39,15 +41,19 @@ class MovieAdapter(private val listener: OnItemClickListener) :
                     }
                 }
             }
-        }
+        }*/
 
         fun bind(movie: Movie) {
             with(binding) {
                 Glide.with(itemView)
                     .load("${movie.baseUrl}${movie.poster_path}")
-                    .error(R.drawable.ic_error)
+                    .error(R.drawable.logo)
                     .into(ivMoviePoster)
                 tvMovieTitle.text = movie.original_title
+
+                root.setOnClickListener {
+                    listener.onItemClick(movie)
+                }
             }
 
         }

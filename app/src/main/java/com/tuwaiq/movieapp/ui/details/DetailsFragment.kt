@@ -32,7 +32,7 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
             val movie = args.movie
             Glide.with(this@DetailsFragment)
                 .load("${movie.baseUrl}${movie.poster_path}")
-                .error(R.drawable.ic_error)
+                .error(R.drawable.logo)
                 .listener(object : RequestListener<Drawable> {
                     override fun onLoadFailed(
                         e: GlideException?,
@@ -41,6 +41,16 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                         isFirstResource: Boolean,
                     ): Boolean {
                         progressBar.isVisible = false
+                        ivShareMovie.isVisible = true
+                        toggleFavorite.isVisible = true
+                        tvDescription.isVisible = true
+                        tvMovieTitle.isVisible = true
+                        tvMovieRate.isVisible = true
+                        tvMovieTime.isVisible = true
+                        tvMovieLanguage.isVisible = true
+                        tvMoviePopularity.isVisible = true
+                        tvPersonsRate.isVisible = true
+                        tvMovieAdult.isVisible = true
                         return false
                     }
 
@@ -52,11 +62,11 @@ class DetailsFragment : Fragment(R.layout.fragment_details) {
                         isFirstResource: Boolean,
                     ): Boolean {
                         progressBar.isVisible = false
+                        ivShareMovie.isVisible = true
+                        toggleFavorite.isVisible = true
                         tvDescription.isVisible = true
                         tvMovieTitle.isVisible = true
                         tvMovieRate.isVisible = true
-                        toggleFavorite.isVisible = true
-                        ivShareMovie.isVisible = true
                         tvMovieTime.isVisible = true
                         tvMovieLanguage.isVisible = true
                         tvMoviePopularity.isVisible = true
